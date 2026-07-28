@@ -238,11 +238,11 @@ export default function ResumePage() {
                         </p>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 print:bg-slate-200 text-slate-300 print:text-slate-800 shrink-0">
-                        Next.js / Netlify Live
+                        Next.js / Vercel Live
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 print:text-slate-800 leading-relaxed">
-                      Interactive web app designed for students to calculate course grades, simulate cumulative GPA scenarios, and visualize semester progression. Deployed live on Netlify.
+                      Interactive web app designed for students to calculate course grades, simulate cumulative GPA scenarios, and visualize semester progression. Deployed live on Vercel.
                     </p>
                   </div>
 

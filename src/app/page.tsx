@@ -132,7 +132,7 @@ const projects = [
     ],
     tech: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/mihretu-dev/GPA_Calculator",
-    liveDemo: "https://mhgpacalculator.netlify.app/",
+    liveDemo: "https://gpa-calculator-nu-nine.vercel.app/",
     image: "/projects/gpa-calculator.png",
     icon: Terminal,
     accentColor: "blue",
