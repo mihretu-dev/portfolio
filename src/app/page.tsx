@@ -215,6 +215,7 @@ const projects = [
     ],
     tech: ["React", "JavaScript", "Tailwind CSS", "Analytics"],
     github: "https://github.com/mihretu-dev/Insta_analyzer",
+    liveDemo: "https://insta-analyzer-rho.vercel.app/",
     image: "/projects/insta-analyzer.png",
     icon: Users,
     accentColor: "pink",
