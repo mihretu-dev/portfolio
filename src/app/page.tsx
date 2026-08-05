@@ -169,10 +169,12 @@ const projects = [
       "Built with Jetpack Compose for modern reactive UI and Jetpack Room for offline-first data persistence.",
       "Custom workout routine builder with exercise logging and progress tracking.",
       "Structured MVVM architecture using Kotlin Coroutines, StateFlow, and ViewModel.",
+      "Official v1.0.0 Android APK release binary available for direct download.",
     ],
-    tech: ["Kotlin", "Jetpack Compose", "Room DB", "Android SDK"],
+    tech: ["Kotlin", "Jetpack Compose", "Room DB", "v1.0.0 APK Released"],
     github: "https://github.com/mihretu-dev/HomeWorkoutApp",
     liveDemo: undefined,
+    apkDownload: "https://github.com/mihretu-dev/HomeWorkoutApp/releases/download/v1.0.0/app-production-release-unsigned.apk",
     image: "/projects/home-workout.png",
     icon: Smartphone,
     accentColor: "emerald",
@@ -795,17 +797,24 @@ export default function PortfolioPage() {
                   {/* Card Footer: Tech Badges & View Details */}
                   <div className="relative z-10 pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between gap-2">
                     <div className="flex flex-wrap gap-1.5 min-w-0">
-                      {project.tech.slice(0, 3).map((t) => (
-                        <span
-                          key={t}
-                          className="px-2 py-0.5 rounded-md bg-slate-800/80 border border-slate-700/50 text-[10px] font-medium text-slate-300"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                      {project.tech.length > 3 && (
+                      {project.tech.slice(0, 4).map((t) => {
+                        const isApkBadge = t.includes("APK");
+                        return (
+                          <span
+                            key={t}
+                            className={`px-2 py-0.5 rounded-md text-[10px] font-medium ${
+                              isApkBadge
+                                ? "bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-semibold"
+                                : "bg-slate-800/80 border border-slate-700/50 text-slate-300"
+                            }`}
+                          >
+                            {t}
+                          </span>
+                        );
+                      })}
+                      {project.tech.length > 4 && (
                         <span className="px-1.5 py-0.5 rounded-md bg-slate-800/40 text-[10px] font-medium text-slate-500">
-                          +{project.tech.length - 3}
+                          +{project.tech.length - 4}
                         </span>
                       )}
                     </div>
@@ -882,7 +891,18 @@ export default function PortfolioPage() {
                       </div>
 
                       {/* Action Buttons */}
-                      <div className="flex items-center gap-3 shrink-0">
+                      <div className="flex items-center gap-3 shrink-0 flex-wrap sm:flex-nowrap">
+                        {"apkDownload" in selectedProject && selectedProject.apkDownload && (
+                          <a
+                            href={selectedProject.apkDownload as string}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-500/20"
+                          >
+                            <FileDown className="w-4 h-4" />
+                            Download APK
+                          </a>
+                        )}
                         {selectedProject.liveDemo && (
                           <a
                             href={selectedProject.liveDemo}
@@ -902,7 +922,7 @@ export default function PortfolioPage() {
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs sm:text-sm font-bold text-slate-200 hover:text-white transition-all"
                           >
                             <FaGithub className="w-4 h-4" />
-                            Code
+                            View Source
                           </a>
                         )}
                       </div>
@@ -1039,31 +1059,44 @@ export default function PortfolioPage() {
             <div className="lg:col-span-7 space-y-5 relative pl-4 sm:pl-6 border-l border-slate-800/80 ml-2 sm:ml-4">
               {[
                 {
-                  title: "Foundation",
-                  subtitle: "Hawassa University",
+                  title: "B.S. in Information Systems",
+                  subtitle: "Hawassa University • Class of 2026",
                   description:
-                    "Focused on core CS/IS principles, OOP architecture, and database management.",
+                    "Core CS/IS principles, OOP architecture, and database design.",
                   tag: "Academic Milestone",
                   icon: BookOpen,
                   accent: "border-emerald-500/40 text-emerald-400 bg-emerald-500/10",
+                  tech: ["Java", "C++", "MySQL", "OOP", "Systems Analysis"],
                 },
                 {
-                  title: "Project Execution",
-                  subtitle: "Applied Software Systems",
+                  title: "Applied Engineering & Enterprise Projects",
+                  subtitle: "Full-Stack Platforms",
                   description:
-                    "Built full-stack applications including a Java HR System and Next.js GPA Calculator.",
+                    "Development of full-stack platforms (QR Hotel Menu, AI Resume Builder, Java HR System).",
                   tag: "Full-Stack Development",
                   icon: Terminal,
                   accent: "border-indigo-500/40 text-indigo-400 bg-indigo-500/10",
+                  tech: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion"],
                 },
                 {
-                  title: "Current Status",
-                  subtitle: "Open for Opportunities",
+                  title: "Mobile App Execution & Production",
+                  subtitle: "MH Training Hub Release",
                   description:
-                    "Open for full-time and remote roles in Full-Stack Web Development, Android Development, and Software Engineering.",
+                    "Development and release of 'MH Training Hub' (Offline-first Android fitness app with Jetpack Compose & Room DB).",
+                  tag: "Mobile Production",
+                  icon: Smartphone,
+                  accent: "border-purple-500/40 text-purple-400 bg-purple-500/10",
+                  tech: ["Kotlin", "Jetpack Compose", "Room DB", "WorkManager", "Android SDK"],
+                },
+                {
+                  title: "Ready for Impact & Open to Roles",
+                  subtitle: "Software Engineering & Native Android Focus",
+                  description:
+                    "B.S. Information Systems Graduate from Hawassa University. Currently focused on building high-performance Native Android apps (Kotlin, Jetpack Compose, Room DB) and scalable full-stack web solutions. Open for full-time and remote roles.",
                   tag: "Ready to Impact",
                   icon: Compass,
                   accent: "border-amber-500/40 text-amber-400 bg-amber-500/10",
+                  tech: ["Full-Time", "Remote Roles", "Android / Web"],
                 },
               ].map((milestone, idx) => {
                 const MilestoneIcon = milestone.icon;
@@ -1081,7 +1114,7 @@ export default function PortfolioPage() {
                       <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     </div>
 
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center justify-between gap-3 flex-wrap">
                       <div className="flex items-center gap-2">
                         <div className={`p-1.5 rounded-lg border ${milestone.accent}`}>
                           <MilestoneIcon className="w-4 h-4" />
@@ -1102,6 +1135,20 @@ export default function PortfolioPage() {
                     <p className="text-sm text-slate-300 leading-relaxed pl-8">
                       {milestone.description}
                     </p>
+
+                    {/* Tech Badges */}
+                    {milestone.tech && milestone.tech.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pl-8 pt-2">
+                        {milestone.tech.map((t) => (
+                          <span
+                            key={t}
+                            className="px-2 py-0.5 rounded-md bg-slate-800/80 border border-slate-700/60 text-[10px] font-medium text-emerald-400"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 );
               })}
