@@ -331,18 +331,10 @@ export default function PortfolioPage() {
         style={{ scaleX }}
       />
 
-      {/* ── Custom Animated Pointer ── */}
-      <CustomCursor />
-
-      {/* ── Fixed Starfield Background ── */}
-      <Starfield />
-
-      {/* ── Ambient Background Glows ── */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-48 -left-48 w-[600px] h-[600px] bg-emerald-500/8 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 -right-48 w-[500px] h-[500px] bg-indigo-500/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-purple-500/6 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+      {/* ── Ambient Radial Background ── */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-slate-950" aria-hidden="true">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,#0f172a_0%,#020617_100%)] opacity-90" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-slate-900/30 blur-3xl pointer-events-none rounded-full" />
       </div>
 
       {/* ── Navigation ── */}
@@ -435,70 +427,48 @@ export default function PortfolioPage() {
         {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
         <section id="hero" className="relative space-y-8 md:pt-8 overflow-visible">
 
-          {/* Animated Background Ambient Glow Pulses */}
-          <motion.div
-            className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-1/3 -right-24 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 9,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
           <motion.div
             variants={heroContainerVariants}
             initial="hidden"
             animate="show"
             className="space-y-7 max-w-3xl relative z-10"
           >
-            {/* 1. Availability Status Pill */}
+            {/* Developer Status Meta Line */}
             <motion.div variants={heroItemVariants}>
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-sm text-xs font-medium text-slate-300">
+              <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-slate-900/80 border border-slate-800/80 text-xs font-mono text-slate-400 shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
-                Available for full-time &amp; remote roles
+                <span>location: Hawassa, ET</span>
+                <span className="text-slate-700">•</span>
+                <span>focus: Full-Stack &amp; Native Android</span>
               </div>
             </motion.div>
 
-            {/* 2 & 3. Main Name Heading & Subtitle */}
+            {/* Main Name Heading & Subtitle */}
             <motion.div variants={heroItemVariants} className="space-y-2">
-              <AnimatedName />
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+                Mihretu Hizkel
+              </h1>
               <TypewriterSubtitle />
             </motion.div>
 
             {/* 4. Bio Text Paragraph */}
-            <motion.p variants={heroItemVariants} className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl">
+            <motion.p variants={heroItemVariants} className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl font-normal">
               Engineering high-quality web solutions, software applications, and robust
               database systems. Focused on clean code, object-oriented architecture,
               and seamless AI integrations that drive real-world impact.
             </motion.p>
 
-            {/* 5. Action Buttons with Hover & Tap Effects */}
+            {/* 5. Action Buttons */}
             <motion.div variants={heroItemVariants} className="pt-1 flex flex-wrap gap-3">
               <motion.a
                 href="#projects"
                 id="hero-view-projects"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all duration-200 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-md"
               >
                 View Projects
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -508,9 +478,9 @@ export default function PortfolioPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-view-resume"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 text-slate-200 font-medium text-sm transition-all duration-200 group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium text-sm transition-all duration-200 group"
               >
                 <FileDown className="w-4 h-4 text-emerald-400 group-hover:translate-y-0.5 transition-transform" />
                 View Resume
@@ -518,17 +488,45 @@ export default function PortfolioPage() {
               <motion.a
                 href="#contact"
                 id="hero-get-in-touch"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 text-slate-200 font-medium text-sm transition-all duration-200"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium text-sm transition-all duration-200"
               >
                 Get in Touch
                 <ChevronRight className="w-4 h-4 text-slate-400" />
               </motion.a>
             </motion.div>
 
+            {/* 6. Clean Horizontal Tech Stack Bar */}
+            <motion.div variants={heroItemVariants} className="pt-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-mono text-slate-500 uppercase tracking-widest mr-1 font-semibold">
+                  Stack:
+                </span>
+                {[
+                  { name: "React", icon: FaReact },
+                  { name: "Next.js", icon: SiNextdotjs },
+                  { name: "Java", icon: FaJava },
+                  { name: "Python", icon: FaPython },
+                  { name: "Android", icon: FaAndroid },
+                  { name: "MySQL", icon: SiMysql },
+                ].map((tech) => {
+                  const Icon = tech.icon;
+                  return (
+                    <div
+                      key={tech.name}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/50 text-slate-300 text-xs font-mono font-medium hover:border-slate-700 hover:text-white transition-all shadow-sm cursor-default"
+                    >
+                      <Icon className="w-3.5 h-3.5 text-slate-400" />
+                      <span>{tech.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+
             {/* Bouncing Scroll Down Indicator */}
-            <motion.div variants={heroItemVariants} className="pt-6">
+            <motion.div variants={heroItemVariants} className="pt-4">
               <a
                 href="#disciplines"
                 aria-label="Scroll down to Disciplines"
@@ -543,64 +541,6 @@ export default function PortfolioPage() {
                 </motion.div>
               </a>
             </motion.div>
-          </motion.div>
-
-          {/* 6. Decorative Floating Technology Pill Badges with Organic Floating Animation */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="hidden lg:flex absolute right-0 top-6 flex-col gap-3.5 z-20"
-          >
-            {[
-              { name: "React", icon: FaReact, color: "border-cyan-500/40 bg-cyan-950/30 text-cyan-400 shadow-cyan-500/10" },
-              { name: "Next.js", icon: SiNextdotjs, color: "border-slate-700/60 bg-slate-900/70 text-slate-200 shadow-slate-500/10" },
-              { name: "Java", icon: FaJava, color: "border-amber-500/40 bg-amber-950/30 text-amber-400 shadow-amber-500/10" },
-              { name: "Python", icon: FaPython, color: "border-yellow-500/40 bg-yellow-950/30 text-yellow-400 shadow-yellow-500/10" },
-              { name: "Android", icon: FaAndroid, color: "border-emerald-500/40 bg-emerald-950/30 text-emerald-400 shadow-emerald-500/10" },
-              { name: "MySQL", icon: SiMysql, color: "border-indigo-500/40 bg-indigo-950/30 text-indigo-400 shadow-indigo-500/10" },
-            ].map((tech, i) => {
-              const Icon = tech.icon;
-              const yFloat = [0, -(6 + (i % 3) * 2), 0, 6 + (i % 2) * 2, 0];
-              const duration = 4 + (i % 4) * 0.8;
-
-              return (
-                <motion.div
-                  key={tech.name}
-                  initial={{ x: 40, opacity: 0 }}
-                  animate={{
-                    x: 0,
-                    opacity: 1,
-                    y: yFloat,
-                  }}
-                  transition={{
-                    x: { delay: 0.7 + i * 0.1, duration: 0.5 },
-                    opacity: { delay: 0.7 + i * 0.1, duration: 0.5 },
-                    y: {
-                      duration,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.3,
-                    },
-                  }}
-                  whileHover={{
-                    scale: 1.14,
-                    x: -12,
-                    boxShadow: "0 0 22px rgba(34, 211, 238, 0.3)",
-                  }}
-                  className={`group flex items-center gap-2.5 px-3.5 py-2 rounded-xl border backdrop-blur-md shadow-lg transition-all duration-300 cursor-pointer ${tech.color}`}
-                >
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-current opacity-60" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-current" />
-                  </span>
-                  <Icon className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="text-xs font-mono font-semibold tracking-wide text-slate-300 group-hover:text-white">
-                    {tech.name}
-                  </span>
-                </motion.div>
-              );
-            })}
           </motion.div>
         </section>
 
