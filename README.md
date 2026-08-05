@@ -6,13 +6,15 @@ Modern, high-performance developer portfolio built with Next.js App Router, Type
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-purple?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel)](https://github.com/mihretu-dev/portfolio)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel)](https://portfolio-tan-one-84.vercel.app/)
 
 ---
 
 ## 📌 Overview
 
 This is the official portfolio website of **Mihretu Hizkel**, a Full-Stack Software Developer and Information Systems Graduate focused on building high-performance Native Android applications (Kotlin, Jetpack Compose, Room DB) and scalable full-stack web solutions.
+
+🔗 **Live Portfolio**: [https://portfolio-tan-one-84.vercel.app/](https://portfolio-tan-one-84.vercel.app/)
 
 The portfolio features a sleek, minimalist software engineering aesthetic, smooth Framer Motion animations, interactive project modals, and an automated resume viewer.
 
