@@ -1,25 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#020617"/>
-    </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#34d399"/>
-      <stop offset="100%" stop-color="#10b981"/>
-    </linearGradient>
-    <filter id="emeraldGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="12" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-  </defs>
-
-  <!-- Background container -->
-  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+  <!-- Solid Dark Background for High Contrast -->
+  <rect width="512" height="512" rx="96" fill="#020617"/>
   
-  <!-- Subtle border highlight -->
-  <rect x="20" y="20" width="472" height="472" rx="90" fill="none" stroke="#10b981" stroke-width="16" stroke-opacity="0.35"/>
+  <!-- Outer accent line -->
+  <rect x="8" y="8" width="496" height="496" rx="88" fill="none" stroke="#10b981" stroke-width="16" stroke-opacity="0.3"/>
 
-  <!-- Trademark 'MH' Typography -->
-  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="220" font-weight="900" fill="url(#textGrad)" letter-spacing="-6" filter="url(#emeraldGlow)">MH</text>
+  <!-- Maximized Bold 'MH' Typography for Tab Visibility -->
+  <text x="50%" y="53%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Arial Black', sans-serif" font-size="340" font-weight="900" fill="#34d399" letter-spacing="-8">MH</text>
 </svg>
