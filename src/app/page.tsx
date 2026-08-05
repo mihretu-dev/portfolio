@@ -112,7 +112,7 @@ const projects = [
     ],
     tech: ["Java", "OOP", "MySQL", "Systems Design"],
     github: "https://github.com/mihretu-dev/HRSystem",
-    liveDemo: "https://github.com/mihretu-dev/HRSystem#readme",
+    liveDemo: undefined,
     image: "/projects/hr-system.png",
     icon: Briefcase,
     accentColor: "emerald",
@@ -161,19 +161,19 @@ const projects = [
     badgeColor: "text-purple-400",
   },
   {
-    title: "Campus Companion Android App",
-    tagline: "Native Mobile Academic & Schedule Tracker",
+    title: "Home Workout Android App",
+    tagline: "Offline-First Fitness & Custom Workout Tracker",
     description:
-      "A native Android application featuring offline-first local storage, course grade simulation, and real-time push notifications for university class schedules.",
+      "A modern, offline-first Android fitness and custom workout tracking application built with Jetpack Compose, Room DB, and clean MVVM architecture.",
     highlights: [
-      "Built with native Kotlin and Jetpack architecture components (Room, ViewModel).",
-      "Offline-first database synchronization for lecture schedule access without network connectivity.",
-      "Automated push notifications for upcoming exam timetables and submission deadlines.",
+      "Built with Jetpack Compose for modern reactive UI and Jetpack Room for offline-first data persistence.",
+      "Custom workout routine builder with exercise logging and progress tracking.",
+      "Structured MVVM architecture using Kotlin Coroutines, StateFlow, and ViewModel.",
     ],
-    tech: ["Kotlin", "Android SDK", "Room DB", "REST APIs"],
-    github: "https://github.com/mihretu-dev",
+    tech: ["Kotlin", "Jetpack Compose", "Room DB", "Android SDK"],
+    github: "https://github.com/mihretu-dev/HomeWorkoutApp",
     liveDemo: undefined,
-    image: "/projects/campus-companion.png",
+    image: "/projects/home-workout.png",
     icon: Smartphone,
     accentColor: "emerald",
     spotlightGlow: "rgba(34, 197, 94, 0.22), rgba(20, 184, 166, 0.08)",
@@ -432,7 +432,7 @@ export default function PortfolioPage() {
 
         {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
         <section id="hero" className="relative space-y-8 md:pt-8 overflow-visible">
-          
+
           {/* Animated Background Ambient Glow Pulses */}
           <motion.div
             className="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"
@@ -981,7 +981,7 @@ export default function PortfolioPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* ── Left Column: Featured Education Card (lg:col-span-5) ── */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}

@@ -266,23 +266,23 @@ export default function ResumePage() {
                     </p>
                   </div>
 
-                  {/* 4. Campus Companion Android App */}
+                  {/* 4. Home Workout Android App */}
                   <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 print:bg-slate-50 print:border-slate-200 space-y-2">
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h4 className="text-base font-bold text-white print:text-slate-950">
-                          Campus Companion Android App
+                          Home Workout Android App
                         </h4>
                         <p className="text-xs font-medium text-green-400 print:text-green-800">
-                          Native Mobile Academic &amp; Schedule Tracker
+                          Offline-First Fitness &amp; Custom Workout Tracker
                         </p>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 print:bg-slate-200 text-slate-300 print:text-slate-800 shrink-0">
-                        Kotlin / Room DB
+                        Kotlin / Jetpack Compose
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 print:text-slate-800 leading-relaxed">
-                      Native Android application featuring offline-first local storage via Room DB, course grade simulation, and push notifications for university class schedules.
+                      Modern, offline-first Android fitness application featuring custom exercise routine builders, local data persistence via Room DB, and reactive Jetpack Compose UI.
                     </p>
                   </div>
 
