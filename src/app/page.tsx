@@ -27,6 +27,7 @@ import {
   ChevronDown,
   Send,
   User,
+  Users,
   MessageSquare,
   AlertCircle,
   Loader2,
@@ -201,6 +202,25 @@ const projects = [
     spotlightGlow: "rgba(245, 158, 11, 0.25), rgba(239, 68, 68, 0.08)",
     hoverBorder: "hover:border-amber-500/50",
     badgeColor: "text-amber-400",
+  },
+  {
+    title: "Instagram Follower Analyzer",
+    tagline: "Client-Side Connection & Follower Analytics Tool",
+    description:
+      "A sleek, private, 100% client-side Instagram follower analyzer & connection timeline tool built with React JS. Track unfollowers, fans, mutual connections, and follow history with zero data uploads or login required.",
+    highlights: [
+      "100% client-side data parsing — zero login credentials or server uploads required for complete privacy.",
+      "Comprehensive analytics for unfollowers, non-followers, mutual connections, and account fans.",
+      "Interactive follow timeline and engagement analytics built with React and Tailwind CSS.",
+    ],
+    tech: ["React", "JavaScript", "Tailwind CSS", "Analytics"],
+    github: "https://github.com/mihretu-dev/Insta_analyzer",
+    image: "/projects/insta-analyzer.png",
+    icon: Users,
+    accentColor: "pink",
+    spotlightGlow: "rgba(236, 72, 153, 0.25), rgba(244, 63, 94, 0.08)",
+    hoverBorder: "hover:border-pink-500/50",
+    badgeColor: "text-pink-400",
   },
 ];
 

@@ -30,6 +30,7 @@ The portfolio features a sleek, minimalist software engineering aesthetic, smoot
   - **AI Resume Builder**: LLM-assisted resume builder with real-time PDF preview and ATS optimization.
   - **QR Hotel Menu System**: Contactless digital menu and order workflow platform.
   - **Java HR System**: Enterprise OOP-based employee payroll and attendance tracking system.
+  - **Instagram Follower Analyzer**: Sleek 100% client-side Instagram follower analytics & connection timeline tool.
 - **🎓 Academic & Career Journey**: Refined timeline documenting academic milestones at Hawassa University, full-stack software development projects, and current career focus.
 - **📄 Live Resume Page**: Dedicated print-optimized resume route (`/resume`) formatted for clean PDF export.
 - **📬 Contact Section**: Direct contact form and social channel links (GitHub, LinkedIn, Instagram, Telegram).

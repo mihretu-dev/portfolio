@@ -306,6 +306,26 @@ export default function ResumePage() {
                     </p>
                   </div>
 
+                  {/* 6. Instagram Follower Analyzer */}
+                  <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 print:bg-slate-50 print:border-slate-200 space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <h4 className="text-base font-bold text-white print:text-slate-950">
+                          Instagram Follower Analyzer
+                        </h4>
+                        <p className="text-xs font-medium text-pink-400 print:text-pink-800">
+                          Client-Side Connection &amp; Follower Analytics Tool
+                        </p>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 print:bg-slate-200 text-slate-300 print:text-slate-800 shrink-0">
+                        React / Tailwind CSS
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-300 print:text-slate-800 leading-relaxed">
+                      Sleek, private, 100% client-side Instagram follower analyzer &amp; connection timeline tool. Track unfollowers, mutual connections, and follow history with zero login credentials required.
+                    </p>
+                  </div>
+
                 </div>
               </div>
 
