@@ -16,6 +16,14 @@ export const metadata: Metadata = {
   title: "Mihretu Hizkel | Full-Stack Web & Software Developer",
   description:
     "Portfolio of Mihretu Hizkel — Full-Stack Web & Software Developer specializing in React, Next.js, Node.js, Java, C++, Database Architecture, and AI Integration.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
