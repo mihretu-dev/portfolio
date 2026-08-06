@@ -427,10 +427,10 @@ export default function PortfolioPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 rounded-full transition-all"
-              aria-label="View Resume"
+              aria-label="View Resume/CV"
             >
               <FileDown className="w-3.5 h-3.5" />
-              Resume
+              Resume/CV
             </Link>
             <a
               href="#contact"
@@ -504,7 +504,7 @@ export default function PortfolioPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium text-sm transition-all duration-200 group"
               >
                 <FileDown className="w-4 h-4 text-emerald-400 group-hover:translate-y-0.5 transition-transform" />
-                View Resume
+                View Resume/CV
               </motion.a>
               <motion.a
                 href="#contact"
