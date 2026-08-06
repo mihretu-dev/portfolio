@@ -15,6 +15,7 @@ import {
   Briefcase,
   Layers,
   ExternalLink,
+  FileDown,
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -36,13 +37,23 @@ export default function ResumePage() {
             Back to Portfolio
           </Link>
 
-          <button
-            onClick={handlePrint}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35"
-          >
-            <Printer className="w-4 h-4" />
-            Print / Save ATS PDF
-          </button>
+          <div className="flex items-center gap-3">
+            <a
+              href="/Mihretu_Hizkel_Resume.pdf"
+              download="Mihretu_Hizkel_Resume.pdf"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md shadow-emerald-500/20"
+            >
+              <FileDown className="w-4 h-4" />
+              Download PDF
+            </a>
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium text-xs sm:text-sm transition-all"
+            >
+              <Printer className="w-4 h-4 text-cyan-400" />
+              Print Page
+            </button>
+          </div>
         </div>
       </header>
 

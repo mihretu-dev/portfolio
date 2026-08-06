@@ -495,9 +495,10 @@ export default function PortfolioPage() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </motion.a>
               <motion.a
-                href="/resume"
+                href="/Mihretu_Hizkel_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Mihretu_Hizkel_Resume.pdf"
                 id="hero-view-resume"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
