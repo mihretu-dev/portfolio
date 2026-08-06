@@ -28,3 +28,10 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
+
+@media print {
+  @page {
+    margin: 8mm 10mm 8mm 10mm;
+    size: A4 portrait;
+  }
+}

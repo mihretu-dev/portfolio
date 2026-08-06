@@ -12,6 +12,7 @@ import {
   Terminal,
   Briefcase,
   Layers,
+  Award,
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -92,7 +93,7 @@ export default function ResumePage() {
                 </a>
                 <span className="flex items-center gap-1.5 text-slate-400">
                   <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-                  Ethiopia
+                  Hawassa, Ethiopia
                 </span>
               </div>
             </div>
@@ -113,16 +114,19 @@ export default function ResumePage() {
                 <div className="flex flex-wrap gap-1.5">
                   {[
                     "Java",
-                    "Python",
-                    "JavaScript",
-                    "TypeScript",
                     "Kotlin",
+                    "TypeScript",
+                    "JavaScript",
+                    "Python",
                     "C++",
+                    "SQL",
                     "Next.js",
                     "React",
                     "Node.js",
                     "Android SDK",
+                    "Jetpack Compose",
                     "MySQL",
+                    "Room DB",
                     "Tailwind CSS",
                     "Git",
                   ].map((skill) => (
@@ -136,13 +140,13 @@ export default function ResumePage() {
                 </div>
               </div>
 
-              {/* Education */}
+              {/* Education & Academic Metrics */}
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-indigo-400 uppercase font-bold">
                   <GraduationCap className="w-4 h-4" />
-                  <span>// Education</span>
+                  <span>// Education &amp; Metrics</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-1">
+                <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-2">
                   <h4 className="text-sm font-bold text-white">
                     B.S. in Information Systems
                   </h4>
@@ -150,8 +154,18 @@ export default function ResumePage() {
                     Hawassa University
                   </p>
                   <p className="text-[11px] font-mono text-slate-400">
-                    Graduated Class of 2026
+                    Graduated: July 2026
                   </p>
+                  <div className="pt-2 border-t border-slate-800/80 space-y-1 text-xs font-mono text-slate-300">
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400">Cumulative GPA:</span>
+                      <span className="font-bold text-emerald-400">3.1 / 4.0</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400">Exit Exam Score:</span>
+                      <span className="font-bold text-cyan-400">85%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -193,7 +207,7 @@ export default function ResumePage() {
                   <span>// Professional Summary</span>
                 </div>
                 <p className="text-sm text-slate-300 leading-relaxed">
-                  Passionate Information Systems graduate and Full-Stack Software Developer focused on building high-performance web applications, native Android tools, and enterprise database systems. Adept in modern JavaScript/TypeScript ecosystems, Java OOP architecture, and clean RESTful API integration.
+                  Passionate Information Systems graduate and Full-Stack Software Developer focused on building high-performance web applications, native Android tools, and enterprise database systems. Skilled in TypeScript, React, Next.js, Java OOP architecture, Kotlin/Android, and RESTful API integration.
                 </p>
               </div>
 
@@ -206,47 +220,27 @@ export default function ResumePage() {
 
                 <div className="space-y-4">
                   
-                  {/* 1. Java HR System */}
+                  {/* 1. Home Workout Android App */}
                   <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-2">
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h4 className="text-base font-bold text-white">
-                          Java HR System
+                          Home Workout Android App
                         </h4>
                         <p className="text-xs font-medium text-emerald-400">
-                          Java-based Human Resource Management Application
+                          Offline-First Fitness &amp; Custom Workout Tracker
                         </p>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 shrink-0">
-                        Java / MySQL
+                        Kotlin / Jetpack Compose / Room DB
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Comprehensive enterprise system built with pure Java OOP principles for employee record management, payroll processing, department hierarchies, and relational MySQL persistence.
+                      Engineered a 100% offline-first native Android fitness app featuring custom exercise routine builders, local Room DB persistence, and reactive Jetpack Compose UI. Deployed v1.0.0 unsigned production APK.
                     </p>
                   </div>
 
-                  {/* 2. GPA Calculator */}
-                  <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-2">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <h4 className="text-base font-bold text-white">
-                          GPA Calculator
-                        </h4>
-                        <p className="text-xs font-medium text-cyan-400">
-                          Academic Performance &amp; Grade Simulation Tool
-                        </p>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 shrink-0">
-                        Next.js / Vercel Live
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      Interactive web app designed for students to calculate course grades, simulate cumulative GPA scenarios, and visualize semester progression. Deployed live on Vercel.
-                    </p>
-                  </div>
-
-                  {/* 3. AI Resume Builder */}
+                  {/* 2. AI Resume Builder */}
                   <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-2">
                     <div className="flex items-start justify-between gap-2">
                       <div>
@@ -258,31 +252,51 @@ export default function ResumePage() {
                         </p>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 shrink-0">
-                        Next.js / LLM APIs
+                        Next.js / LLM APIs / TypeScript
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Intelligent web app that parses raw developer experience text, optimizes content using LLM APIs, formats tailored PDF resumes, and exports structured JSON portfolio schemas.
+                      Built an intelligent web app parsing developer experience text, optimizing content using Gemini/LLM APIs, rendering tailored PDF resumes, and exporting structured portfolio schemas.
                     </p>
                   </div>
 
-                  {/* 4. Home Workout Android App */}
+                  {/* 3. Java HR System */}
                   <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-2">
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h4 className="text-base font-bold text-white">
-                          Home Workout Android App
+                          Java HR System
                         </h4>
-                        <p className="text-xs font-medium text-green-400">
-                          Offline-First Fitness &amp; Custom Workout Tracker
+                        <p className="text-xs font-medium text-emerald-400">
+                          Enterprise Human Resource Management System
                         </p>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 shrink-0">
-                        Kotlin / Jetpack Compose
+                        Java / MySQL
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Modern, offline-first Android fitness application featuring custom exercise routine builders, local data persistence via Room DB, and reactive Jetpack Compose UI.
+                      Architected an enterprise employee management system using pure Java OOP principles and MySQL relational database, handling employee records, payroll processing, and department hierarchies.
+                    </p>
+                  </div>
+
+                  {/* 4. Instagram Follower Analyzer */}
+                  <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <h4 className="text-base font-bold text-white">
+                          Instagram Follower Analyzer
+                        </h4>
+                        <p className="text-xs font-medium text-pink-400">
+                          Client-Side Connection &amp; Follower Analytics Tool
+                        </p>
+                      </div>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 shrink-0">
+                        React / Tailwind CSS
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Built a 100% client-side Instagram connection &amp; follower analytics tool in React. Tracked unfollowers, mutual connections, and follow history with zero server data uploads. Deployed live on Vercel.
                     </p>
                   </div>
 
@@ -302,27 +316,27 @@ export default function ResumePage() {
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Web platform enabling guests to scan table QR codes, browse dynamic menus, customize orders, and transmit tickets directly to the kitchen dashboard.
+                      Created a contactless digital restaurant ordering platform featuring table QR code scanning, dynamic digital menus, and real-time kitchen order ticket dispatching. Deployed live on Vercel.
                     </p>
                   </div>
 
-                  {/* 6. Instagram Follower Analyzer */}
+                  {/* 6. GPA Calculator */}
                   <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800/80 space-y-2">
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h4 className="text-base font-bold text-white">
-                          Instagram Follower Analyzer
+                          GPA Calculator
                         </h4>
-                        <p className="text-xs font-medium text-pink-400">
-                          Client-Side Connection &amp; Follower Analytics Tool
+                        <p className="text-xs font-medium text-cyan-400">
+                          Academic Performance &amp; Grade Simulation Tool
                         </p>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 shrink-0">
-                        React / Tailwind CSS
+                        Next.js / Vercel Live
                       </span>
                     </div>
                     <p className="text-xs text-slate-300 leading-relaxed">
-                      Sleek, private, 100% client-side Instagram follower analyzer &amp; connection timeline tool. Track unfollowers, mutual connections, and follow history with zero login credentials required.
+                      Built an interactive academic performance tool with course grade calculators, cumulative CGPA simulation algorithms, and semester progression tracking. Deployed live on Vercel.
                     </p>
                   </div>
 
@@ -341,49 +355,55 @@ export default function ResumePage() {
         </div>
       </main>
 
-      {/* ── ATS-Friendly Print View (Print Only: Single-Column, Clean, 1-Page Fit) ── */}
-      <div className="hidden print:block text-black font-sans text-[10.5px] leading-tight space-y-2.5 p-2">
+      {/* ── ATS-Friendly Print View (Print Only: Single-Column, Clickable PDF Links, 1-Page Fit) ── */}
+      <div className="hidden print:block text-black font-sans text-[10px] leading-tight space-y-2 p-1">
         
         {/* Header */}
-        <div className="text-center space-y-0.5 border-b border-black pb-1.5">
+        <div className="text-center space-y-0.5 border-b border-black pb-1">
           <h1 className="text-xl font-extrabold uppercase tracking-tight text-black">
             Mihretu Hizkel
           </h1>
-          <p className="text-[11px] font-semibold text-slate-800">
+          <p className="text-[10.5px] font-semibold text-slate-900">
             Full-Stack Web &amp; Software Developer
           </p>
-          <div className="text-[10px] text-slate-700 flex flex-wrap justify-center items-center gap-x-2 gap-y-0.5 font-normal">
-            <span>mihretuhizkel380@gmail.com</span>
+          <div className="text-[9.5px] text-slate-800 flex flex-wrap justify-center items-center gap-x-2 gap-y-0.5 font-normal">
+            <a href="mailto:mihretuhizkel380@gmail.com" className="text-blue-700 underline">
+              mihretuhizkel380@gmail.com
+            </a>
             <span>•</span>
-            <span>github.com/mihretu-dev</span>
+            <a href="https://github.com/mihretu-dev" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">
+              github.com/mihretu-dev
+            </a>
             <span>•</span>
-            <span>linkedin.com/in/mihretu-hizkel-734105260</span>
+            <a href="https://www.linkedin.com/in/mihretu-hizkel-734105260/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">
+              linkedin.com/in/mihretu-hizkel-734105260
+            </a>
             <span>•</span>
-            <span>Ethiopia</span>
+            <span>Hawassa, Ethiopia</span>
           </div>
         </div>
 
         {/* Professional Summary */}
         <div className="space-y-0.5">
-          <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
+          <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
             Professional Summary
           </h2>
-          <p className="text-[10px] text-slate-800 leading-normal">
-            Information Systems graduate and Full-Stack Software Developer focused on building high-performance web applications, native Android tools, and enterprise database systems. Skilled in TypeScript, React, Next.js, Java OOP architecture, Kotlin/Android, and RESTful API integration.
+          <p className="text-[9.5px] text-slate-900 leading-normal">
+            Information Systems graduate and Full-Stack Software Developer focused on building high-performance web applications, native Android tools, and enterprise database systems. Skilled in Java, Kotlin, TypeScript, React, Next.js, Android SDK, and relational MySQL architecture.
           </p>
         </div>
 
         {/* Technical Skills */}
         <div className="space-y-0.5">
-          <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
+          <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
             Technical Skills
           </h2>
-          <div className="space-y-0.5 text-[10px]">
+          <div className="space-y-0.5 text-[9.5px]">
             <p>
-              <strong className="text-black">Languages:</strong> Java, Python, JavaScript, TypeScript, Kotlin, C++, SQL
+              <strong className="text-black">Languages:</strong> Java, Kotlin, TypeScript, JavaScript, Python, C++, SQL
             </p>
             <p>
-              <strong className="text-black">Frameworks &amp; Tools:</strong> Next.js, React, Node.js, Android SDK, Jetpack Compose, Tailwind CSS, Git
+              <strong className="text-black">Frameworks &amp; Platforms:</strong> Next.js, React, Node.js, Android SDK, Jetpack Compose, Tailwind CSS, Git
             </p>
             <p>
               <strong className="text-black">Databases &amp; Architecture:</strong> MySQL, Room DB, Relational Schema Design, RESTful APIs, OOP Architecture
@@ -391,83 +411,102 @@ export default function ResumePage() {
           </div>
         </div>
 
-        {/* Education */}
+        {/* Education & Academic Metrics */}
         <div className="space-y-0.5">
-          <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
-            Education
+          <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
+            Education &amp; Academic Honors
           </h2>
-          <div className="flex justify-between items-baseline text-[10px]">
+          <div className="flex justify-between items-baseline text-[9.5px]">
             <div>
               <strong className="text-black">Bachelor of Science in Information Systems</strong>
-              <span className="text-slate-700"> — Hawassa University</span>
+              <span className="text-slate-800"> — Hawassa University</span>
+              <span className="text-slate-700 font-mono ml-2">(cGPA: <strong>3.1 / 4.0</strong> | National Exit Exam: <strong>85%</strong>)</span>
             </div>
-            <span className="text-slate-600 font-mono text-[9.5px]">Graduated Class of 2026</span>
+            <span className="text-slate-700 font-mono text-[9px]">Graduated July 2026</span>
           </div>
         </div>
 
         {/* Featured Projects */}
-        <div className="space-y-1.5">
-          <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
-            Featured Projects
+        <div className="space-y-1">
+          <h2 className="text-[10.5px] font-bold uppercase tracking-wider text-black border-b border-slate-400 pb-0.5">
+            Featured Projects &amp; Software Engineering Impact
           </h2>
-          <div className="space-y-1.5">
+          <div className="space-y-1">
             
+            {/* 1. Home Workout Android App */}
             <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <strong className="text-black">Home Workout Android App</strong>
-                <span className="text-slate-600 font-mono text-[9.5px]">Kotlin, Jetpack Compose, Room DB</span>
+              <div className="flex justify-between items-baseline text-[9.5px]">
+                <a href="https://github.com/mihretu-dev/HomeWorkoutApp" target="_blank" rel="noopener noreferrer" className="text-black font-bold hover:text-blue-700 underline">
+                  Home Workout Android App ↗
+                </a>
+                <span className="text-slate-700 font-mono text-[8.5px]">Kotlin, Jetpack Compose, Room DB</span>
               </div>
-              <p className="text-[9.5px] text-slate-800 leading-snug">
-                Offline-first Android fitness application featuring custom exercise routine builders, local Room DB persistence, and reactive Jetpack Compose UI. Released v1.0.0 production APK.
+              <p className="text-[9px] text-slate-900 leading-tight">
+                Engineered a 100% offline-first native Android fitness application featuring custom workout routine builders, local Room DB persistence, and reactive Jetpack Compose UI. Deployed v1.0.0 production APK.
               </p>
             </div>
 
+            {/* 2. AI Resume Builder */}
             <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <strong className="text-black">AI Resume Builder</strong>
-                <span className="text-slate-600 font-mono text-[9.5px]">Next.js, TypeScript, LLM APIs</span>
+              <div className="flex justify-between items-baseline text-[9.5px]">
+                <a href="https://github.com/mihretu-dev" target="_blank" rel="noopener noreferrer" className="text-black font-bold hover:text-blue-700 underline">
+                  AI Resume Builder ↗
+                </a>
+                <span className="text-slate-700 font-mono text-[8.5px]">Next.js, TypeScript, LLM APIs</span>
               </div>
-              <p className="text-[9.5px] text-slate-800 leading-snug">
-                Intelligent web app that parses developer experience text, optimizes content using LLM APIs, and formats tailored PDF resumes and structured portfolio schemas.
+              <p className="text-[9px] text-slate-900 leading-tight">
+                Built an intelligent web application parsing raw developer experience text, optimizing content using Gemini/LLM APIs, rendering ATS-formatted PDF resumes, and exporting structured portfolio schemas.
               </p>
             </div>
 
+            {/* 3. Java HR System */}
             <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <strong className="text-black">Java HR System</strong>
-                <span className="text-slate-600 font-mono text-[9.5px]">Java, MySQL</span>
+              <div className="flex justify-between items-baseline text-[9.5px]">
+                <a href="https://github.com/mihretu-dev" target="_blank" rel="noopener noreferrer" className="text-black font-bold hover:text-blue-700 underline">
+                  Java HR System ↗
+                </a>
+                <span className="text-slate-700 font-mono text-[8.5px]">Java, MySQL</span>
               </div>
-              <p className="text-[9.5px] text-slate-800 leading-snug">
-                Enterprise human resource management application built with Java OOP principles for employee payroll processing, department management, and relational database persistence.
+              <p className="text-[9px] text-slate-900 leading-tight">
+                Architected an enterprise human resource management application built with pure Java OOP principles and MySQL relational database, handling employee records, payroll processing, and department hierarchies.
               </p>
             </div>
 
+            {/* 4. Instagram Follower Analyzer */}
             <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <strong className="text-black">Instagram Follower Analyzer</strong>
-                <span className="text-slate-600 font-mono text-[9.5px]">React, JavaScript, Tailwind CSS</span>
+              <div className="flex justify-between items-baseline text-[9.5px]">
+                <a href="https://insta-analyzer-rho.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold underline">
+                  Instagram Follower Analyzer (Live Demo ↗)
+                </a>
+                <span className="text-slate-700 font-mono text-[8.5px]">React, JavaScript, Tailwind CSS</span>
               </div>
-              <p className="text-[9.5px] text-slate-800 leading-snug">
-                100% client-side Instagram connection &amp; follower analytics tool tracking unfollowers, mutual connections, and follow history with zero server data uploads.
+              <p className="text-[9px] text-slate-900 leading-tight">
+                100% client-side Instagram connection &amp; follower analytics tool in React. Tracked unfollowers, mutual connections, and follow history with zero server data uploads. Deployed live on Vercel.
               </p>
             </div>
 
+            {/* 5. QR Hotel Menu System */}
             <div>
-              <div className="flex justify-between items-baseline text-[10.5px]">
-                <strong className="text-black">QR Hotel Menu &amp; Ordering System</strong>
-                <span className="text-slate-600 font-mono text-[9.5px]">React, Node.js, MySQL</span>
+              <div className="flex justify-between items-baseline text-[9.5px]">
+                <a href="https://qr-hotel-menu-cyan.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold underline">
+                  QR Hotel Menu &amp; Ordering System (Live Demo ↗)
+                </a>
+                <span className="text-slate-700 font-mono text-[8.5px]">React, Node.js, MySQL</span>
               </div>
-              <p className="text-[9.5px] text-slate-800 leading-snug">
-                Contactless digital menu and order management platform enabling table QR code scanning and direct kitchen ticket transmission.
+              <p className="text-[9px] text-slate-900 leading-tight">
+                Contactless digital restaurant ordering platform featuring table QR code scanning, dynamic digital menus, and real-time kitchen order ticket dispatching. Deployed live on Vercel.
               </p>
             </div>
 
+            {/* 6. MH GPA Calculator v2 */}
             <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <strong className="text-black">MH GPA Calculator v2</strong>
-                <span className="text-slate-600 font-mono text-[9.5px]">Next.js, Vercel Live</span>
+              <div className="flex justify-between items-baseline text-[9.5px]">
+                <a href="https://gpa-calculator-nu-nine.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-700 font-bold underline">
+                  MH GPA Calculator v2 (Live Demo ↗)
+                </a>
+                <span className="text-slate-700 font-mono text-[8.5px]">Next.js, Vercel Live</span>
               </div>
-              <p className="text-[9.5px] text-slate-800 leading-snug">
+              <p className="text-[9px] text-slate-900 leading-tight">
                 Interactive web application for calculating course grades, simulating cumulative CGPA scenarios, and tracking semester progression. Deployed live on Vercel.
               </p>
             </div>
