@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-tan-one-84.vercel.app"),
   title: "Mihretu Hizkel | Full-Stack Web & Android Developer",
   description:
     "Portfolio of Mihretu Hizkel — Full-Stack Web & Android Developer specializing in Kotlin, Jetpack Compose, React, Next.js, Node.js, Java, and Database Architecture.",
@@ -23,6 +24,30 @@ export const metadata: Metadata = {
     ],
     shortcut: "/icon.png",
     apple: "/icon.png",
+  },
+  openGraph: {
+    title: "Mihretu Hizkel | Full-Stack Web & Android Developer",
+    description:
+      "Portfolio of Mihretu Hizkel — Full-Stack Web & Android Developer specializing in Kotlin, Jetpack Compose, React, Next.js, Node.js, Java, and Database Architecture.",
+    url: "https://portfolio-tan-one-84.vercel.app/",
+    siteName: "Mihretu Hizkel Portfolio",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Mihretu Hizkel - Full-Stack Web & Android Developer Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mihretu Hizkel | Full-Stack Web & Android Developer",
+    description:
+      "Portfolio of Mihretu Hizkel — Full-Stack Web & Android Developer specializing in Kotlin, Jetpack Compose, React, Next.js, Node.js, Java, and Database Architecture.",
+    images: ["/opengraph-image.png"],
   },
 };
 
