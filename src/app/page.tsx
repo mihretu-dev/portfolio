@@ -454,19 +454,6 @@ export default function PortfolioPage() {
             animate="show"
             className="space-y-7 max-w-3xl relative z-10"
           >
-            {/* Developer Status Meta Line */}
-            <motion.div variants={heroItemVariants}>
-              <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-md bg-slate-900/80 border border-slate-800/80 text-xs font-mono text-slate-400 shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
-                <span>location: Hawassa, ET</span>
-                <span className="text-slate-700">•</span>
-                <span>focus: Full-Stack &amp; Native Android</span>
-              </div>
-            </motion.div>
-
             {/* Main Name Heading & Subtitle */}
             <motion.div variants={heroItemVariants} className="space-y-2">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
@@ -1191,7 +1178,7 @@ export default function PortfolioPage() {
                         required
                         value={formData.name}
                         onChange={handleFormChange}
-                        placeholder="Your full name"
+                        placeholder="e.g., Abebe Bikila"
                         className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
                       />
                     </div>
@@ -1206,7 +1193,7 @@ export default function PortfolioPage() {
                         required
                         value={formData.email}
                         onChange={handleFormChange}
-                        placeholder="you@example.com"
+                        placeholder="abebe.bikila@gmail.com"
                         className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
                       />
                     </div>
@@ -1224,7 +1211,7 @@ export default function PortfolioPage() {
                       required
                       value={formData.subject}
                       onChange={handleFormChange}
-                      placeholder="Project inquiry, job opportunity, etc."
+                      placeholder="e.g., Mobile App &amp; Web Project Inquiry"
                       className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
                     />
                   </div>
@@ -1241,7 +1228,7 @@ export default function PortfolioPage() {
                       rows={4}
                       value={formData.message}
                       onChange={handleFormChange}
-                      placeholder="Tell me about your project or how I can help..."
+                      placeholder="Selam Mihretu, I would like to discuss a software development project..."
                       className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all resize-none"
                     />
                   </div>
@@ -1463,11 +1450,7 @@ export default function PortfolioPage() {
 
       {/* ── Footer ── */}
       <footer className="relative z-10 mt-8 border-t border-slate-800/60 py-8 bg-slate-950/90">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-slate-400 font-bold">MH.dev</span>
-            <span>— Built with Next.js, Tailwind CSS &amp; Framer Motion</span>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} Mihretu Hizkel. All rights reserved.</div>
         </div>
       </footer>
