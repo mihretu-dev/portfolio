@@ -10,7 +10,7 @@ interface TypewriterSubtitleProps {
 }
 
 export default function TypewriterSubtitle({
-  text = "Full-Stack Web & Software Developer",
+  text = "Full-Stack Web & Android Developer",
   speed = 50,
   pauseDuration = 2500,
 }: TypewriterSubtitleProps) {

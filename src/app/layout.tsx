@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mihretu Hizkel | Full-Stack Web & Software Developer",
+  title: "Mihretu Hizkel | Full-Stack Web & Android Developer",
   description:
-    "Portfolio of Mihretu Hizkel — Full-Stack Web & Software Developer specializing in React, Next.js, Node.js, Java, C++, Database Architecture, and AI Integration.",
+    "Portfolio of Mihretu Hizkel — Full-Stack Web & Android Developer specializing in Kotlin, Jetpack Compose, React, Next.js, Node.js, Java, and Database Architecture.",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
