@@ -175,7 +175,7 @@ const projects = [
     tech: ["Kotlin", "Jetpack Compose", "Room DB", "APK Released"],
     github: "https://github.com/mihretu-dev/HomeWorkoutApp",
     liveDemo: undefined,
-    apkDownload: "https://github.com/mihretu-dev/HomeWorkoutApp/releases/latest",
+    apkDownload: "https://github.com/mihretu-dev/HomeWorkoutApp/releases/latest/download/TrainingHub.apk",
     image: "/projects/home-workout.png",
     icon: Smartphone,
     accentColor: "emerald",
