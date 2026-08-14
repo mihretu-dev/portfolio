@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer utilities {
   .bg-grid-pattern {
     background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
@@ -7,26 +9,48 @@
   }
 }
 
-html {
+html.dark {
   color-scheme: dark;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
+html.light {
+  color-scheme: light;
+}
+
+/* Custom scrollbar — dark mode */
+.dark ::-webkit-scrollbar {
   width: 6px;
 }
 
-::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track {
   background: #020617;
 }
 
-::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb {
   background: #1e293b;
   border-radius: 999px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #334155;
+}
+
+/* Custom scrollbar — light mode */
+.light ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 @media print {

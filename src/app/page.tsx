@@ -4,12 +4,10 @@ import { FaGithub, FaLinkedin, FaInstagram, FaTelegram, FaReact, FaJava, FaPytho
 import { SiNextdotjs, SiMysql } from "react-icons/si";
 import React, { useState, type FormEvent } from "react";
 import { motion, AnimatePresence, useScroll, useSpring, type Variants } from "framer-motion";
-import Link from "next/link";
-import Starfield from "@/components/Starfield";
-import CustomCursor from "@/components/CustomCursor";
-import AnimatedName from "@/components/AnimatedName";
 import TechMarquee from "@/components/TechMarquee";
 import TypewriterSubtitle from "@/components/TypewriterSubtitle";
+import ThemeToggle from "@/components/ThemeToggle";
+import MobileNav from "@/components/MobileNav";
 import {
   Code2,
   Cpu,
@@ -48,55 +46,55 @@ const disciplines = [
     description:
       "Building responsive, high-performance web applications with modern frontend frameworks and scalable Node.js backend services.",
     icon: Code2,
-    tech: ["React", "Next.js", "Node.js", "Tailwind CSS"],
-    accent: "from-emerald-500/20 to-teal-500/10",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    accent: "from-emerald-500/20 via-teal-500/10 to-transparent",
     borderGlow: "group-hover:border-emerald-500/50",
-    iconBg: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-    iconGlow: "group-hover:shadow-emerald-500/20",
+    iconBg: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400",
+    iconGlow: "group-hover:shadow-[0_0_20px_rgba(52,211,153,0.3)]",
   },
   {
-    title: "Software & Systems Engineering",
+    title: "Native Android Development",
     description:
-      "Architecting robust object-oriented systems with strong emphasis on design patterns, performance, and clean code principles.",
-    icon: Cpu,
-    tech: ["Java", "C++", "OOP", "Systems Design"],
-    accent: "from-blue-500/20 to-cyan-500/10",
-    borderGlow: "group-hover:border-blue-500/50",
-    iconBg: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-    iconGlow: "group-hover:shadow-blue-500/20",
-  },
-  {
-    title: "Database Architecture",
-    description:
-      "Designing relational schemas, optimizing complex queries, and ensuring data integrity across all application tiers.",
-    icon: Database,
-    tech: ["MySQL", "Relational Database Design"],
-    accent: "from-indigo-500/20 to-purple-500/10",
-    borderGlow: "group-hover:border-indigo-500/50",
-    iconBg: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
-    iconGlow: "group-hover:shadow-indigo-500/20",
-  },
-  {
-    title: "AI Integration & Workflows",
-    description:
-      "Integrating modern AI APIs, crafting efficient prompt pipelines, and automating intelligent developer workflows with Python.",
-    icon: Sparkles,
-    tech: ["Python", "AI APIs", "Prompt Engineering"],
-    accent: "from-purple-500/20 to-pink-500/10",
-    borderGlow: "group-hover:border-purple-500/50",
-    iconBg: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-    iconGlow: "group-hover:shadow-purple-500/20",
-  },
-  {
-    title: "Android / Mobile Development",
-    description:
-      "Developing native and cross-platform mobile applications with emphasis on responsive UI layouts, efficient lifecycle management, and REST API integration.",
+      "Developing native Android applications with Kotlin, modern Jetpack Compose declarative UI, and offline-first Room databases.",
     icon: Smartphone,
-    tech: ["Android SDK", "Java", "Kotlin", "Mobile UI", "REST APIs"],
-    accent: "from-amber-500/20 to-emerald-500/10",
-    borderGlow: "group-hover:border-amber-500/50",
-    iconBg: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-    iconGlow: "group-hover:shadow-amber-500/20",
+    tech: ["Kotlin", "Jetpack Compose", "Room DB", "MVVM", "Coroutines"],
+    accent: "from-green-500/20 via-emerald-500/10 to-transparent",
+    borderGlow: "group-hover:border-green-500/50",
+    iconBg: "bg-green-500/10 border-green-500/20 text-green-400",
+    iconGlow: "group-hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]",
+  },
+  {
+    title: "Systems Engineering (Java/OOP)",
+    description:
+      "Architecting enterprise desktop systems and backend services using object-oriented principles, design patterns, and clean code standards.",
+    icon: Cpu,
+    tech: ["Java", "OOP Design", "C++", "Architecture", "Design Patterns"],
+    accent: "from-cyan-500/20 via-blue-500/10 to-transparent",
+    borderGlow: "group-hover:border-cyan-500/50",
+    iconBg: "bg-cyan-500/10 border-cyan-500/20 text-cyan-400",
+    iconGlow: "group-hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]",
+  },
+  {
+    title: "Database Design & Optimization",
+    description:
+      "Designing normalized relational schemas, writing complex SQL queries, and optimizing database performance for high-throughput applications.",
+    icon: Database,
+    tech: ["MySQL", "Schema Design", "Query Optimization", "Relational Modeling"],
+    accent: "from-blue-500/20 via-indigo-500/10 to-transparent",
+    borderGlow: "group-hover:border-blue-500/50",
+    iconBg: "bg-blue-500/10 border-blue-500/20 text-blue-400",
+    iconGlow: "group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]",
+  },
+  {
+    title: "AI Integrations & Workflow Automation",
+    description:
+      "Integrating large language models and AI APIs into production workflows to automate business processes and enhance user capabilities.",
+    icon: Sparkles,
+    tech: ["Gemini API", "LLM Pipelines", "Prompt Engineering", "Automation"],
+    accent: "from-purple-500/20 via-pink-500/10 to-transparent",
+    borderGlow: "group-hover:border-purple-500/50",
+    iconBg: "bg-purple-500/10 border-purple-500/20 text-purple-400",
+    iconGlow: "group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]",
   },
 ];
 
@@ -119,7 +117,7 @@ const projects = [
     accentColor: "emerald",
     spotlightGlow: "rgba(52, 211, 153, 0.22), rgba(16, 185, 129, 0.08)",
     hoverBorder: "hover:border-emerald-500/50",
-    badgeColor: "text-emerald-400",
+    badgeColor: "text-emerald-500 dark:text-emerald-400",
   },
   {
     title: "GPA Calculator",
@@ -139,7 +137,7 @@ const projects = [
     accentColor: "blue",
     spotlightGlow: "rgba(59, 130, 246, 0.22), rgba(14, 165, 233, 0.08)",
     hoverBorder: "hover:border-blue-500/50",
-    badgeColor: "text-blue-400",
+    badgeColor: "text-blue-500 dark:text-blue-400",
   },
   {
     title: "AI Resume Builder",
@@ -159,7 +157,7 @@ const projects = [
     accentColor: "purple",
     spotlightGlow: "rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.08)",
     hoverBorder: "hover:border-purple-500/50",
-    badgeColor: "text-purple-400",
+    badgeColor: "text-purple-500 dark:text-purple-400",
   },
   {
     title: "Home Workout Android App",
@@ -181,7 +179,7 @@ const projects = [
     accentColor: "emerald",
     spotlightGlow: "rgba(34, 197, 94, 0.22), rgba(20, 184, 166, 0.08)",
     hoverBorder: "hover:border-green-500/50",
-    badgeColor: "text-green-400",
+    badgeColor: "text-green-500 dark:text-green-400",
   },
   {
     title: "QR Hotel Menu & Ordering System",
@@ -201,7 +199,7 @@ const projects = [
     accentColor: "amber",
     spotlightGlow: "rgba(245, 158, 11, 0.25), rgba(239, 68, 68, 0.08)",
     hoverBorder: "hover:border-amber-500/50",
-    badgeColor: "text-amber-400",
+    badgeColor: "text-amber-500 dark:text-amber-400",
   },
   {
     title: "Instagram Follower Analyzer",
@@ -221,7 +219,7 @@ const projects = [
     accentColor: "pink",
     spotlightGlow: "rgba(236, 72, 153, 0.25), rgba(244, 63, 94, 0.08)",
     hoverBorder: "hover:border-pink-500/50",
-    badgeColor: "text-pink-400",
+    badgeColor: "text-pink-500 dark:text-pink-400",
   },
 ];
 
@@ -344,7 +342,7 @@ export default function PortfolioPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden">
+    <div className="relative min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-x-hidden transition-colors duration-300">
 
       {/* ── Scroll Progress Bar ── */}
       <motion.div
@@ -353,31 +351,31 @@ export default function PortfolioPage() {
       />
 
       {/* ── Ambient Radial Background ── */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-slate-950" aria-hidden="true">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,#0f172a_0%,#020617_100%)] opacity-90" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-slate-900/30 blur-3xl pointer-events-none rounded-full" />
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(241,245,249,0.8)_0%,rgba(255,255,255,1)_100%)] dark:bg-[radial-gradient(circle_at_50%_20%,#0f172a_0%,#020617_100%)] opacity-90 transition-colors duration-300" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-emerald-500/5 dark:bg-slate-900/30 blur-3xl pointer-events-none rounded-full" />
       </div>
 
       {/* ── Navigation ── */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/75 border-b border-slate-800/60">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/75 border-b border-slate-200/80 dark:border-slate-800/60 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group" aria-label="Home">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono text-xs font-bold transition-colors group-hover:bg-emerald-500/20 group-hover:border-emerald-500/50">
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold transition-colors group-hover:bg-emerald-500/20 group-hover:border-emerald-500/50">
               MH
             </div>
-            <span className="hidden sm:block text-sm font-semibold tracking-widest text-slate-300 group-hover:text-white transition-colors">
+            <span className="hidden sm:block text-sm font-semibold tracking-widest text-slate-800 dark:text-slate-300 group-hover:text-slate-950 dark:group-hover:text-white transition-colors">
               MIHRETU HIZKEL
             </span>
           </a>
 
-          {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm text-slate-400 font-medium">
+          {/* Nav Links (Desktop) */}
+          <nav className="hidden md:flex items-center gap-8 text-sm text-slate-600 dark:text-slate-400 font-medium">
             {["Disciplines", "Projects", "Journey", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="hover:text-slate-100 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-emerald-400 hover:after:w-full after:transition-all"
+                className="hover:text-slate-950 dark:hover:text-slate-100 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-emerald-500 dark:after:bg-emerald-400 hover:after:w-full after:transition-all"
               >
                 {item}
               </a>
@@ -385,59 +383,71 @@ export default function PortfolioPage() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Social Icons (Desktop) */}
+            <div className="hidden sm:flex items-center gap-1">
+              <a
+                href="https://github.com/mihretu-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-200 dark:hover:border-slate-700/60 transition-all"
+                aria-label="GitHub Profile"
+              >
+                <FaGithub className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/mihretu-hizkel-734105260/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-200 dark:hover:border-slate-700/60 transition-all"
+                aria-label="LinkedIn Profile"
+              >
+                <FaLinkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/mh_mire_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-slate-500 dark:text-slate-400 hover:text-pink-600 dark:hover:text-pink-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-200 dark:hover:border-slate-700/60 transition-all"
+                aria-label="Instagram Profile"
+              >
+                <FaInstagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://t.me/Mihretu_H"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-200 dark:hover:border-slate-700/60 transition-all"
+                aria-label="Telegram Profile"
+              >
+                <FaTelegram className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Resume Button (Direct Download) */}
             <a
-              href="https://github.com/mihretu-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-700/60 transition-all"
-              aria-label="GitHub Profile"
-            >
-              <FaGithub className="w-4 h-4" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mihretu-hizkel-734105260/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-slate-400 hover:text-slate-100 hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-700/60 transition-all"
-              aria-label="LinkedIn Profile"
-            >
-              <FaLinkedin className="w-4 h-4" />
-            </a>
-            <a
-              href="https://www.instagram.com/mh_mire_"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-slate-400 hover:text-pink-400 hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-700/60 transition-all"
-              aria-label="Instagram Profile"
-            >
-              <FaInstagram className="w-4 h-4" />
-            </a>
-            <a
-              href="https://t.me/Mihretu_H"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-slate-400 hover:text-sky-400 hover:bg-slate-800/80 rounded-lg border border-transparent hover:border-slate-700/60 transition-all"
-              aria-label="Telegram Profile"
-            >
-              <FaTelegram className="w-4 h-4" />
-            </a>
-            <Link
-              href="/resume"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 rounded-full transition-all"
-              aria-label="View Resume/CV"
+              href="/Mihretu_Hizkel_Resume.pdf"
+              download="Mihretu_Hizkel_Resume.pdf"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 rounded-full transition-all"
+              aria-label="Download Resume/CV"
             >
               <FileDown className="w-3.5 h-3.5" />
               Resume/CV
-            </Link>
+            </a>
+
+            {/* Get in touch (Desktop) */}
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-full transition-all"
+              className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 rounded-full transition-all"
             >
               Get in Touch
             </a>
+
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
+
+            {/* Mobile Navigation Drawer */}
+            <MobileNav />
           </div>
         </div>
       </header>
@@ -456,27 +466,27 @@ export default function PortfolioPage() {
           >
             {/* Main Name Heading & Subtitle */}
             <motion.div variants={heroItemVariants} className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-950 dark:text-white">
                 Mihretu Hizkel
               </h1>
               <TypewriterSubtitle />
             </motion.div>
 
-            {/* 4. Bio Text Paragraph */}
-            <motion.p variants={heroItemVariants} className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl font-normal">
+            {/* Bio Text Paragraph */}
+            <motion.p variants={heroItemVariants} className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl font-normal">
               Engineering high-quality web solutions, software applications, and robust
               database systems. Focused on clean code, object-oriented architecture,
               and seamless AI integrations that drive real-world impact.
             </motion.p>
 
-            {/* 5. Action Buttons */}
+            {/* Action Buttons */}
             <motion.div variants={heroItemVariants} className="pt-1 flex flex-wrap gap-3">
               <motion.a
                 href="#projects"
                 id="hero-view-projects"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-md"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-md shadow-emerald-500/20"
               >
                 View Projects
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -489,9 +499,9 @@ export default function PortfolioPage() {
                 id="hero-view-resume"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium text-sm transition-all duration-200 group"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-800 dark:text-slate-200 font-medium text-sm transition-all duration-200 group shadow-sm"
               >
-                <FileDown className="w-4 h-4 text-emerald-400 group-hover:translate-y-0.5 transition-transform" />
+                <FileDown className="w-4 h-4 text-emerald-600 dark:text-emerald-400 group-hover:translate-y-0.5 transition-transform" />
                 View Resume/CV
               </motion.a>
               <motion.a
@@ -499,14 +509,14 @@ export default function PortfolioPage() {
                 id="hero-get-in-touch"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-200 font-medium text-sm transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-800 dark:text-slate-200 font-medium text-sm transition-all duration-200 shadow-sm"
               >
                 Get in Touch
                 <ChevronRight className="w-4 h-4 text-slate-400" />
               </motion.a>
             </motion.div>
 
-            {/* 6. Clean Horizontal Tech Stack Bar */}
+            {/* Clean Horizontal Tech Stack Bar */}
             <motion.div variants={heroItemVariants} className="pt-3">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-xs font-mono text-slate-500 uppercase tracking-widest mr-1 font-semibold">
@@ -524,9 +534,9 @@ export default function PortfolioPage() {
                   return (
                     <div
                       key={tech.name}
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900/50 text-slate-300 text-xs font-mono font-medium hover:border-slate-700 hover:text-white transition-all shadow-sm cursor-default"
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-900/50 text-slate-700 dark:text-slate-300 text-xs font-mono font-medium hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-950 dark:hover:text-white transition-all shadow-sm cursor-default"
                     >
-                      <Icon className="w-3.5 h-3.5 text-slate-400" />
+                      <Icon className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
                       <span>{tech.name}</span>
                     </div>
                   );
@@ -539,14 +549,14 @@ export default function PortfolioPage() {
               <a
                 href="#disciplines"
                 aria-label="Scroll down to Disciplines"
-                className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-emerald-400 transition-colors group"
+                className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors group"
               >
                 <span>Scroll Down</span>
                 <motion.div
                   animate={{ y: [0, 6, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <ChevronDown className="w-4 h-4 text-emerald-400" />
+                  <ChevronDown className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
                 </motion.div>
               </a>
             </motion.div>
@@ -573,14 +583,14 @@ export default function PortfolioPage() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="space-y-2"
           >
-            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-400 uppercase">
+            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
               <Layers className="w-3.5 h-3.5" />
               <span>Core Competencies</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-950 dark:text-white">
               Disciplines &amp; Expertise
             </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
               Core focus areas spanning full-stack web applications, systems engineering,
               data architecture, and AI-driven automation workflows.
             </p>
@@ -599,7 +609,7 @@ export default function PortfolioPage() {
                   transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                   whileHover={{ y: -6, scale: 1.015 }}
                   onMouseMove={handleCardMouseMove}
-                  className={`group relative p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 ${item.borderGlow} backdrop-blur-sm transition-all duration-300 shadow-lg cursor-default overflow-hidden`}
+                  className={`group relative p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/80 ${item.borderGlow} backdrop-blur-sm transition-all duration-300 shadow-md dark:shadow-lg cursor-default overflow-hidden`}
                 >
                   {/* Interactive Mouse Spotlight Layer */}
                   <div
@@ -617,20 +627,20 @@ export default function PortfolioPage() {
                   <div className="relative z-10 space-y-5">
                     <div className="flex items-start justify-between gap-4">
                       <div
-                        className={`w-12 h-12 rounded-xl border flex items-center justify-center shrink-0 shadow-lg ${item.iconBg} ${item.iconGlow} transition-shadow duration-300`}
+                        className={`w-12 h-12 rounded-xl border flex items-center justify-center shrink-0 shadow-sm ${item.iconBg} ${item.iconGlow} transition-shadow duration-300`}
                       >
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-mono text-slate-600 group-hover:text-slate-500 transition-colors mt-1">
+                      <span className="text-xs font-mono text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-500 transition-colors mt-1">
                         0{index + 1}
                       </span>
                     </div>
 
                     <div className="space-y-1.5">
-                      <h3 className="text-base font-bold text-slate-100 group-hover:text-white transition-colors">
+                      <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-white transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-slate-500 group-hover:text-slate-400 leading-relaxed transition-colors">
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
                         {item.description}
                       </p>
                     </div>
@@ -640,7 +650,7 @@ export default function PortfolioPage() {
                       {item.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-2.5 py-1 rounded-lg bg-slate-800/70 border border-slate-700/50 text-xs font-medium text-slate-300 group-hover:border-slate-600/80 group-hover:text-slate-200 transition-colors"
+                          className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/50 text-xs font-medium text-slate-700 dark:text-slate-300 group-hover:border-slate-300 dark:group-hover:border-slate-600/80 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors"
                         >
                           {t}
                         </span>
@@ -670,14 +680,14 @@ export default function PortfolioPage() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="space-y-2"
           >
-            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-400 uppercase">
+            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
               <Terminal className="w-3.5 h-3.5" />
               <span>Selected Work</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-950 dark:text-white">
               Featured Projects
             </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
               A selection of projects demonstrating enterprise system design, clean UI
               development, and algorithmic problem solving.
             </p>
@@ -697,7 +707,7 @@ export default function PortfolioPage() {
                   whileHover={{ y: -6, scale: 1.015 }}
                   onClick={() => setSelectedProject(project)}
                   onMouseMove={handleCardMouseMove}
-                  className={`group relative flex flex-col justify-between p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 ${project.hoverBorder} backdrop-blur-sm transition-all duration-300 shadow-xl cursor-pointer overflow-hidden`}
+                  className={`group relative flex flex-col justify-between p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 ${project.hoverBorder} backdrop-blur-sm transition-all duration-300 shadow-md dark:shadow-xl cursor-pointer overflow-hidden`}
                 >
                   {/* Interactive Mouse Spotlight Layer with Custom Flash Color */}
                   <div
@@ -709,8 +719,8 @@ export default function PortfolioPage() {
 
                   {/* Thumbnail Browser Frame */}
                   <div className="relative z-10 space-y-4">
-                    <div className="rounded-xl overflow-hidden border border-slate-800 bg-slate-950/90 shadow-md group-hover:border-slate-700 transition-colors">
-                      <div className="px-3 py-1.5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+                    <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950/90 shadow-sm group-hover:border-slate-300 dark:group-hover:border-slate-700 transition-colors">
+                      <div className="px-3 py-1.5 bg-slate-100 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                         <div className="flex items-center gap-1.5">
                           <div className="w-2 h-2 rounded-full bg-rose-500/80" />
                           <div className="w-2 h-2 rounded-full bg-amber-500/80" />
@@ -720,10 +730,11 @@ export default function PortfolioPage() {
                           {project.title.toLowerCase().replace(/\s+/g, "")}.demo
                         </span>
                       </div>
-                      <div className="relative aspect-video overflow-hidden bg-slate-950">
+                      <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-950">
                         <img
                           src={project.image}
-                          alt={`${project.title} Preview`}
+                          alt={`${project.title} Preview screenshot`}
+                          loading="lazy"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
@@ -733,18 +744,18 @@ export default function PortfolioPage() {
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <ProjectIcon className={`w-4 h-4 ${project.badgeColor} shrink-0`} />
-                        <h3 className="text-lg font-bold text-white group-hover:text-slate-100 transition-colors truncate">
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-slate-100 transition-colors truncate">
                           {project.title}
                         </h3>
                       </div>
-                      <p className="text-xs text-slate-400 font-medium line-clamp-1">
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium line-clamp-1">
                         {project.tagline}
                       </p>
                     </div>
                   </div>
 
                   {/* Card Footer: Tech Badges & View Details */}
-                  <div className="relative z-10 pt-4 mt-4 border-t border-slate-800/60 flex items-center justify-between gap-2">
+                  <div className="relative z-10 pt-4 mt-4 border-t border-slate-200 dark:border-slate-800/60 flex items-center justify-between gap-2">
                     <div className="flex flex-wrap gap-1.5 min-w-0">
                       {project.tech.slice(0, 4).map((t) => {
                         const isApkBadge = t.includes("APK");
@@ -753,8 +764,8 @@ export default function PortfolioPage() {
                             key={t}
                             className={`px-2 py-0.5 rounded-md text-[10px] font-medium ${
                               isApkBadge
-                                ? "bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-semibold"
-                                : "bg-slate-800/80 border border-slate-700/50 text-slate-300"
+                                ? "bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 font-semibold"
+                                : "bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/50 text-slate-700 dark:text-slate-300"
                             }`}
                           >
                             {t}
@@ -762,7 +773,7 @@ export default function PortfolioPage() {
                         );
                       })}
                       {project.tech.length > 4 && (
-                        <span className="px-1.5 py-0.5 rounded-md bg-slate-800/40 text-[10px] font-medium text-slate-500">
+                        <span className="px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/40 text-[10px] font-medium text-slate-500">
                           +{project.tech.length - 4}
                         </span>
                       )}
@@ -788,7 +799,7 @@ export default function PortfolioPage() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onClick={() => setSelectedProject(null)}
-                  className="fixed inset-0 bg-slate-950/80 backdrop-blur-md cursor-pointer"
+                  className="fixed inset-0 bg-black/60 dark:bg-slate-950/80 backdrop-blur-md cursor-pointer"
                 />
 
                 {/* Modal Card */}
@@ -797,20 +808,20 @@ export default function PortfolioPage() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.92, y: 20 }}
                   transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                  className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-8 shadow-2xl space-y-6 scrollbar-thin"
+                  className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-2xl space-y-6 scrollbar-thin"
                 >
                   {/* Close Button */}
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700/60 text-slate-400 hover:text-white transition-all z-20"
+                    className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700/60 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all z-20"
                     aria-label="Close modal"
                   >
                     <X className="w-5 h-5" />
                   </button>
 
                   {/* Screenshot Browser Header */}
-                  <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl">
-                    <div className="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center gap-2">
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 shadow-md">
+                    <div className="px-4 py-2.5 bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-rose-500/80" />
                       <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                       <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
@@ -818,7 +829,7 @@ export default function PortfolioPage() {
                         https://{selectedProject.title.toLowerCase().replace(/\s+/g, "")}.demo
                       </span>
                     </div>
-                    <div className="relative aspect-video max-h-[360px] overflow-hidden bg-slate-950">
+                    <div className="relative aspect-video max-h-[360px] overflow-hidden bg-slate-100 dark:bg-slate-950">
                       <img
                         src={selectedProject.image}
                         alt={`${selectedProject.title} Full Preview`}
@@ -831,10 +842,10 @@ export default function PortfolioPage() {
                   <div className="space-y-6">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       <div className="space-y-1">
-                        <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 dark:text-white">
                           {selectedProject.title}
                         </h3>
-                        <p className="text-sm font-medium text-emerald-400">
+                        <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
                           {selectedProject.tagline}
                         </p>
                       </div>
@@ -868,7 +879,7 @@ export default function PortfolioPage() {
                             href={selectedProject.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs sm:text-sm font-bold text-slate-200 hover:text-white transition-all"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white transition-all shadow-sm"
                           >
                             <FaGithub className="w-4 h-4" />
                             View Source
@@ -878,19 +889,19 @@ export default function PortfolioPage() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
                       {selectedProject.description}
                     </p>
 
                     {/* Highlights */}
-                    <div className="space-y-2 pt-2 border-t border-slate-800/80">
-                      <h4 className="text-xs font-mono tracking-widest text-slate-400 uppercase font-semibold">
+                    <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+                      <h4 className="text-xs font-mono tracking-widest text-slate-500 dark:text-slate-400 uppercase font-semibold">
                         Key Features &amp; Highlights
                       </h4>
                       <ul className="space-y-2">
                         {selectedProject.highlights.map((hl, i) => (
-                          <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                            <span className="mt-0.5 text-emerald-400 shrink-0 font-bold">▸</span>
+                          <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                            <span className="mt-0.5 text-emerald-500 dark:text-emerald-400 shrink-0 font-bold">▸</span>
                             <span>{hl}</span>
                           </li>
                         ))}
@@ -898,15 +909,15 @@ export default function PortfolioPage() {
                     </div>
 
                     {/* Tech Badges */}
-                    <div className="space-y-2 pt-2 border-t border-slate-800/80">
-                      <h4 className="text-xs font-mono tracking-widest text-slate-400 uppercase font-semibold">
+                    <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800/80">
+                      <h4 className="text-xs font-mono tracking-widest text-slate-500 dark:text-slate-400 uppercase font-semibold">
                         Technologies Used
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.tech.map((t) => (
                           <span
                             key={t}
-                            className="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-xs font-semibold text-emerald-300"
+                            className="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-xs font-semibold text-emerald-700 dark:text-emerald-300"
                           >
                             {t}
                           </span>
@@ -937,14 +948,14 @@ export default function PortfolioPage() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="space-y-2"
           >
-            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-400 uppercase">
+            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
               <GraduationCap className="w-3.5 h-3.5" />
               <span>Background &amp; Growth</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-950 dark:text-white">
               Education &amp; Journey
             </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
               My academic background and path in software engineering &amp; web development.
             </p>
           </motion.div>
@@ -957,33 +968,33 @@ export default function PortfolioPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ amount: 0.2 }}
               transition={{ duration: 0.55, ease: "easeOut" }}
-              className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm space-y-6 relative overflow-hidden shadow-xl"
+              className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 backdrop-blur-sm space-y-6 relative overflow-hidden shadow-md dark:shadow-xl"
             >
               <div className="absolute top-0 right-0 p-6 opacity-[0.04] pointer-events-none select-none">
-                <GraduationCap className="w-40 h-40 text-emerald-300" />
+                <GraduationCap className="w-40 h-40 text-emerald-500 dark:text-emerald-300" />
               </div>
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
 
               <div className="flex items-center justify-between gap-4">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
                   <GraduationCap className="w-6 h-6" />
                 </div>
-                <span className="px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-mono font-medium text-emerald-400">
+                <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400">
                   Graduated Class of 2026
                 </span>
               </div>
 
               <div className="space-y-1">
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-slate-950 dark:text-white">
                   B.S. in Information Systems
                 </h3>
-                <p className="text-sm font-medium text-slate-400 flex items-center gap-2">
+                <p className="text-sm font-medium text-slate-600 dark:text-slate-400 flex items-center gap-2">
                   <span>Hawassa University</span>
                 </p>
               </div>
 
-              <div className="space-y-3 pt-2 border-t border-slate-800/60">
-                <div className="text-xs font-mono tracking-widest text-slate-400 uppercase">
+              <div className="space-y-3 pt-2 border-t border-slate-200 dark:border-slate-800/60">
+                <div className="text-xs font-mono tracking-widest text-slate-500 dark:text-slate-400 uppercase">
                   Highlights &amp; Coursework
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -995,7 +1006,7 @@ export default function PortfolioPage() {
                   ].map((course) => (
                     <span
                       key={course}
-                      className="px-2.5 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700/50 text-xs font-medium text-slate-300"
+                      className="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50 text-xs font-medium text-slate-700 dark:text-slate-300"
                     >
                       {course}
                     </span>
@@ -1005,7 +1016,7 @@ export default function PortfolioPage() {
             </motion.div>
 
             {/* ── Right Column: Timeline Milestones (lg:col-span-7) ── */}
-            <div className="lg:col-span-7 space-y-5 relative pl-4 sm:pl-6 border-l border-slate-800/80 ml-2 sm:ml-4">
+            <div className="lg:col-span-7 space-y-5 relative pl-4 sm:pl-6 border-l border-slate-200 dark:border-slate-800/80 ml-2 sm:ml-4">
               {[
                 {
                   title: "B.S. in Information Systems",
@@ -1014,7 +1025,7 @@ export default function PortfolioPage() {
                     "Core CS/IS principles, OOP architecture, and database design.",
                   tag: "Academic Milestone",
                   icon: BookOpen,
-                  accent: "border-emerald-500/40 text-emerald-400 bg-emerald-500/10",
+                  accent: "border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/10",
                   tech: ["Java", "C++", "MySQL", "OOP", "Systems Analysis"],
                 },
                 {
@@ -1024,7 +1035,7 @@ export default function PortfolioPage() {
                     "Development of full-stack platforms (QR Hotel Menu, AI Resume Builder, Java HR System).",
                   tag: "Full-Stack Development",
                   icon: Terminal,
-                  accent: "border-indigo-500/40 text-indigo-400 bg-indigo-500/10",
+                  accent: "border-indigo-500/40 text-indigo-600 dark:text-indigo-400 bg-indigo-500/10",
                   tech: ["Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Framer Motion"],
                 },
                 {
@@ -1034,7 +1045,7 @@ export default function PortfolioPage() {
                     "Development and release of 'MH Training Hub' (Offline-first Android fitness app with Jetpack Compose & Room DB).",
                   tag: "Mobile Production",
                   icon: Smartphone,
-                  accent: "border-purple-500/40 text-purple-400 bg-purple-500/10",
+                  accent: "border-purple-500/40 text-purple-600 dark:text-purple-400 bg-purple-500/10",
                   tech: ["Kotlin", "Jetpack Compose", "Room DB", "WorkManager", "Android SDK"],
                 },
                 {
@@ -1044,7 +1055,7 @@ export default function PortfolioPage() {
                     "B.S. Information Systems Graduate from Hawassa University. Currently focused on building high-performance Native Android apps (Kotlin, Jetpack Compose, Room DB) and scalable full-stack web solutions. Open for full-time and remote roles.",
                   tag: "Ready to Impact",
                   icon: Compass,
-                  accent: "border-amber-500/40 text-amber-400 bg-amber-500/10",
+                  accent: "border-amber-500/40 text-amber-600 dark:text-amber-400 bg-amber-500/10",
                   tech: ["Full-Time", "Remote Roles", "Android / Web"],
                 },
               ].map((milestone, idx) => {
@@ -1056,11 +1067,11 @@ export default function PortfolioPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.5, delay: idx * 0.12 }}
-                    className="relative group space-y-2 p-5 rounded-2xl bg-slate-900/40 border border-slate-800/60 hover:border-slate-700/80 transition-all shadow-md"
+                    className="relative group space-y-2 p-5 rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 hover:border-slate-300 dark:hover:border-slate-700/80 transition-all shadow-sm dark:shadow-md"
                   >
                     {/* Timeline Node Bullet */}
-                    <div className="absolute -left-[31px] sm:-left-[39px] top-6 w-5 h-5 rounded-full bg-slate-950 border-2 border-emerald-500 flex items-center justify-center shadow-sm shadow-emerald-500/50 group-hover:scale-125 transition-transform">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <div className="absolute -left-[31px] sm:-left-[39px] top-6 w-5 h-5 rounded-full bg-white dark:bg-slate-950 border-2 border-emerald-500 flex items-center justify-center shadow-sm shadow-emerald-500/50 group-hover:scale-125 transition-transform">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
                     </div>
 
                     <div className="flex items-center justify-between gap-3 flex-wrap">
@@ -1068,20 +1079,20 @@ export default function PortfolioPage() {
                         <div className={`p-1.5 rounded-lg border ${milestone.accent}`}>
                           <MilestoneIcon className="w-4 h-4" />
                         </div>
-                        <h4 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
+                        <h4 className="text-base font-bold text-slate-950 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
                           {milestone.title}
                         </h4>
                       </div>
-                      <span className="text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/50 text-slate-400">
+                      <span className="text-[10px] font-mono tracking-wider px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/50 text-slate-600 dark:text-slate-400">
                         {milestone.tag}
                       </span>
                     </div>
 
-                    <div className="text-xs font-semibold text-slate-400 pl-8">
+                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 pl-8">
                       {milestone.subtitle}
                     </div>
 
-                    <p className="text-sm text-slate-300 leading-relaxed pl-8">
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed pl-8">
                       {milestone.description}
                     </p>
 
@@ -1091,7 +1102,7 @@ export default function PortfolioPage() {
                         {milestone.tech.map((t) => (
                           <span
                             key={t}
-                            className="px-2 py-0.5 rounded-md bg-slate-800/80 border border-slate-700/60 text-[10px] font-medium text-emerald-400"
+                            className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 text-[10px] font-medium text-emerald-600 dark:text-emerald-400"
                           >
                             {t}
                           </span>
@@ -1123,14 +1134,14 @@ export default function PortfolioPage() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="space-y-2"
           >
-            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-400 uppercase">
+            <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
               <Mail className="w-3.5 h-3.5" />
               <span>Let&apos;s Connect</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-950 dark:text-white">
               Get In Touch
             </h2>
-            <p className="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
               Whether you have an open role, a project inquiry, or simply want to connect — feel free to reach out directly.
             </p>
           </motion.div>
@@ -1144,32 +1155,33 @@ export default function PortfolioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ amount: 0.2 }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-7 relative p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl flex flex-col justify-between overflow-hidden"
+              className="lg:col-span-7 relative p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 backdrop-blur-sm shadow-md dark:shadow-xl flex flex-col justify-between overflow-hidden"
             >
               {/* Card Ambient Glow */}
               <div className="absolute top-0 right-0 -mr-16 -mt-16 w-60 h-60 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="relative z-10 space-y-6">
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    <Send className="w-4 h-4 text-emerald-400" />
+                  <h3 className="text-xl font-bold text-slate-950 dark:text-white flex items-center gap-2">
+                    <Send className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                     Send a Message
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     Fill out the fields below and I&apos;ll respond directly to your inbox.
                   </p>
                 </div>
 
                 <form
                   id="contact-form"
+                  aria-label="Contact form"
                   onSubmit={handleFormSubmit}
                   className="space-y-4"
                 >
                   {/* Name & Email row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label htmlFor="contact-name" className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                        <User className="w-3 h-3 text-emerald-400" /> Name
+                      <label htmlFor="contact-name" className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                        <User className="w-3 h-3 text-emerald-600 dark:text-emerald-400" /> Name
                       </label>
                       <input
                         id="contact-name"
@@ -1179,12 +1191,12 @@ export default function PortfolioPage() {
                         value={formData.name}
                         onChange={handleFormChange}
                         placeholder="e.g., Abebe Bikila"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-700/60 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
                       />
                     </div>
                     <div className="space-y-1.5">
-                      <label htmlFor="contact-email" className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                        <Mail className="w-3 h-3 text-emerald-400" /> Email
+                      <label htmlFor="contact-email" className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                        <Mail className="w-3 h-3 text-emerald-600 dark:text-emerald-400" /> Email
                       </label>
                       <input
                         id="contact-email"
@@ -1194,15 +1206,15 @@ export default function PortfolioPage() {
                         value={formData.email}
                         onChange={handleFormChange}
                         placeholder="abebe.bikila@gmail.com"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-700/60 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
                       />
                     </div>
                   </div>
 
                   {/* Subject */}
                   <div className="space-y-1.5">
-                    <label htmlFor="contact-subject" className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                      <Briefcase className="w-3 h-3 text-emerald-400" /> Subject
+                    <label htmlFor="contact-subject" className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                      <Briefcase className="w-3 h-3 text-emerald-600 dark:text-emerald-400" /> Subject
                     </label>
                     <input
                       id="contact-subject"
@@ -1211,15 +1223,15 @@ export default function PortfolioPage() {
                       required
                       value={formData.subject}
                       onChange={handleFormChange}
-                      placeholder="e.g., Mobile App &amp; Web Project Inquiry"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
+                      placeholder="e.g., Mobile App & Web Project Inquiry"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-700/60 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all"
                     />
                   </div>
 
                   {/* Message */}
                   <div className="space-y-1.5">
-                    <label htmlFor="contact-message" className="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                      <MessageSquare className="w-3 h-3 text-emerald-400" /> Message
+                    <label htmlFor="contact-message" className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                      <MessageSquare className="w-3 h-3 text-emerald-600 dark:text-emerald-400" /> Message
                     </label>
                     <textarea
                       id="contact-message"
@@ -1229,7 +1241,7 @@ export default function PortfolioPage() {
                       value={formData.message}
                       onChange={handleFormChange}
                       placeholder="Selam Mihretu, I would like to discuss a software development project..."
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-700/60 text-sm text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-700/60 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/20 transition-all resize-none"
                     />
                   </div>
 
@@ -1261,7 +1273,7 @@ export default function PortfolioPage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0 }}
-                          className="flex items-center gap-1.5 text-sm font-medium text-emerald-400"
+                          className="flex items-center gap-1.5 text-sm font-medium text-emerald-600 dark:text-emerald-400"
                         >
                           <Check className="w-4 h-4" />
                           Message sent successfully!
@@ -1272,7 +1284,7 @@ export default function PortfolioPage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0 }}
-                          className="flex items-center gap-1.5 text-sm font-medium text-red-400"
+                          className="flex items-center gap-1.5 text-sm font-medium text-red-500 dark:text-red-400"
                         >
                           <AlertCircle className="w-4 h-4" />
                           Something went wrong. Try again.
@@ -1290,18 +1302,18 @@ export default function PortfolioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="lg:col-span-5 relative p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl flex flex-col justify-between overflow-hidden space-y-6"
+              className="lg:col-span-5 relative p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 backdrop-blur-sm shadow-md dark:shadow-xl flex flex-col justify-between overflow-hidden space-y-6"
             >
               {/* Card Ambient Glow */}
               <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="relative z-10 space-y-6 flex-1 flex flex-col justify-between">
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    <ExternalLink className="w-4 h-4 text-emerald-400" />
+                  <h3 className="text-xl font-bold text-slate-950 dark:text-white flex items-center gap-2">
+                    <ExternalLink className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                     Direct Reach &amp; Socials
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     Connect via direct email or messaging apps across these platforms.
                   </p>
                 </div>
@@ -1310,24 +1322,24 @@ export default function PortfolioPage() {
                 <button
                   id="contact-copy-email"
                   onClick={handleCopyEmail}
-                  className="group relative p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-emerald-500/40 text-left transition-all duration-200 flex items-center justify-between gap-4 shadow-md w-full"
+                  className="group relative p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 text-left transition-all duration-200 flex items-center justify-between gap-4 shadow-sm w-full"
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
                       <Mail className="w-[18px] h-[18px]" />
                     </div>
                     <div className="min-w-0">
                       <div className="text-[10px] font-mono tracking-widest text-slate-500 uppercase">
                         Direct Email
                       </div>
-                      <div className="text-xs font-semibold text-slate-200 group-hover:text-white truncate transition-colors">
+                      <div className="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white truncate transition-colors">
                         {email}
                       </div>
                     </div>
                   </div>
-                  <span className={`shrink-0 transition-all duration-200 ${copied ? "text-emerald-400" : "text-slate-600 group-hover:text-slate-400"}`}>
+                  <span className={`shrink-0 transition-all duration-200 ${copied ? "text-emerald-600 dark:text-emerald-400" : "text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400"}`}>
                     {copied ? (
-                      <span className="flex items-center gap-1 text-xs font-medium text-emerald-400">
+                      <span className="flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
                         <Check className="w-3.5 h-3.5" /> Copied!
                       </span>
                     ) : (
@@ -1349,14 +1361,14 @@ export default function PortfolioPage() {
                       href="https://github.com/mihretu-dev"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-3.5 rounded-xl bg-slate-950/80 border border-slate-800/90 hover:border-slate-700 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
+                      className="group p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800/90 hover:border-slate-300 dark:hover:border-slate-700 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 shrink-0">
+                        <div className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0">
                           <FaGithub className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-xs font-semibold text-slate-200 group-hover:text-white truncate">
+                          <div className="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white truncate">
                             GitHub
                           </div>
                           <div className="text-[10px] text-slate-500 truncate">
@@ -1364,7 +1376,7 @@ export default function PortfolioPage() {
                           </div>
                         </div>
                       </div>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 shrink-0" />
+                      <ExternalLink className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400 shrink-0" />
                     </a>
 
                     {/* LinkedIn */}
@@ -1373,14 +1385,14 @@ export default function PortfolioPage() {
                       href="https://www.linkedin.com/in/mihretu-hizkel-734105260/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-3.5 rounded-xl bg-slate-950/80 border border-slate-800/90 hover:border-blue-500/40 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
+                      className="group p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800/90 hover:border-blue-500/40 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                        <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
                           <FaLinkedin className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-xs font-semibold text-slate-200 group-hover:text-white truncate">
+                          <div className="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white truncate">
                             LinkedIn
                           </div>
                           <div className="text-[10px] text-slate-500 truncate">
@@ -1388,7 +1400,7 @@ export default function PortfolioPage() {
                           </div>
                         </div>
                       </div>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 shrink-0" />
+                      <ExternalLink className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400 shrink-0" />
                     </a>
 
                     {/* Instagram */}
@@ -1397,14 +1409,14 @@ export default function PortfolioPage() {
                       href="https://www.instagram.com/mh_mire_"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-3.5 rounded-xl bg-slate-950/80 border border-slate-800/90 hover:border-pink-500/40 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
+                      className="group p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800/90 hover:border-pink-500/40 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="w-8 h-8 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 shrink-0">
+                        <div className="w-8 h-8 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-600 dark:text-pink-400 shrink-0">
                           <FaInstagram className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-xs font-semibold text-slate-200 group-hover:text-white truncate">
+                          <div className="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white truncate">
                             Instagram
                           </div>
                           <div className="text-[10px] text-slate-500 truncate">
@@ -1412,7 +1424,7 @@ export default function PortfolioPage() {
                           </div>
                         </div>
                       </div>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 shrink-0" />
+                      <ExternalLink className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400 shrink-0" />
                     </a>
 
                     {/* Telegram */}
@@ -1421,14 +1433,14 @@ export default function PortfolioPage() {
                       href="https://t.me/Mihretu_H"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-3.5 rounded-xl bg-slate-950/80 border border-slate-800/90 hover:border-sky-500/40 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
+                      className="group p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800/90 hover:border-sky-500/40 text-left transition-all duration-200 flex items-center justify-between gap-2 shadow-sm"
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
+                        <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
                           <FaTelegram className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-xs font-semibold text-slate-200 group-hover:text-white truncate">
+                          <div className="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-slate-950 dark:group-hover:text-white truncate">
                             Telegram
                           </div>
                           <div className="text-[10px] text-slate-500 truncate">
@@ -1436,7 +1448,7 @@ export default function PortfolioPage() {
                           </div>
                         </div>
                       </div>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-600 group-hover:text-slate-400 shrink-0" />
+                      <ExternalLink className="w-3.5 h-3.5 text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400 shrink-0" />
                     </a>
                   </div>
                 </div>
@@ -1449,7 +1461,7 @@ export default function PortfolioPage() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="relative z-10 mt-8 border-t border-slate-800/60 py-8 bg-slate-950/90">
+      <footer className="relative z-10 mt-8 border-t border-slate-200 dark:border-slate-800/60 py-8 bg-slate-50/80 dark:bg-slate-950/90 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-slate-500">
           <div>© {new Date().getFullYear()} Mihretu Hizkel. All rights reserved.</div>
         </div>
