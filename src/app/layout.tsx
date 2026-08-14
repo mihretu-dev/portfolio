@@ -71,7 +71,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-full flex flex-col font-sans selection:bg-emerald-500/30 selection:text-emerald-200 transition-colors duration-300">
+      <body className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-full flex flex-col font-sans selection:bg-emerald-500/30 selection:text-emerald-900 dark:selection:text-emerald-100 transition-colors duration-300">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

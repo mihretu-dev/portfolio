@@ -1,0 +1,67 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { MapPin, Heart, Rocket } from "lucide-react";
+
+export default function AboutSection() {
+  return (
+    <motion.section
+      id="about"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="scroll-mt-20"
+    >
+      <div className="relative p-6 sm:p-8 md:p-10 rounded-3xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/80 backdrop-blur-sm shadow-sm dark:shadow-lg overflow-hidden">
+        {/* Subtle ambient glow */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-60 h-60 bg-emerald-500/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 bg-indigo-500/8 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 space-y-4">
+          {/* Section label */}
+          <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
+            <Heart className="w-3.5 h-3.5" />
+            <span>Who I Am</span>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
+            About Me
+          </h2>
+
+          {/* Bio paragraphs */}
+          <div className="space-y-4 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-3xl">
+            <p>
+              I&apos;m Mihretu Hizkel — a software developer from Hawassa, Ethiopia, 
+              with a B.S. in Information Systems from Hawassa University. I fell in love 
+              with building software during my university years, starting with Java OOP and 
+              MySQL, and quickly expanding into full-stack web development with React, Next.js, 
+              and TypeScript, and native Android development with Kotlin and Jetpack Compose.
+            </p>
+            <p>
+              What drives me is the process of turning an idea into something people actually 
+              use — whether that&apos;s an AI-powered resume builder, a contactless hotel ordering 
+              system, or a fitness app that works entirely offline. I care deeply about clean 
+              architecture, thoughtful UI design, and writing code that other developers can 
+              understand and maintain. I&apos;m currently open to full-time and remote opportunities 
+              where I can contribute to meaningful products and grow alongside a strong engineering team.
+            </p>
+          </div>
+
+          {/* Quick facts */}
+          <div className="flex flex-wrap gap-3 pt-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-xs font-medium text-slate-600 dark:text-slate-400">
+              <MapPin className="w-3.5 h-3.5 text-emerald-500" />
+              Hawassa, Ethiopia
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-xs font-medium text-slate-600 dark:text-slate-400">
+              <Rocket className="w-3.5 h-3.5 text-emerald-500" />
+              Open to Full-Time & Remote Roles
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
+}

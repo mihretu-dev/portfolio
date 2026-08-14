@@ -37,8 +37,8 @@ export default function TechMarquee() {
   return (
     <div className="relative w-full overflow-hidden py-4 border-y border-slate-200 dark:border-slate-800/60 bg-slate-50/60 dark:bg-slate-950/40 backdrop-blur-sm select-none">
       {/* Side Fade Mask Gradients */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-white dark:from-slate-950 to-transparent z-20" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-white dark:from-slate-950 to-transparent z-20" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-20" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-20" />
 
       {/* Animated Marquee Container */}
       <div
