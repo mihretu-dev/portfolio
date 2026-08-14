@@ -473,12 +473,13 @@ export default function PortfolioPage() {
               </a>
             </div>
 
-            {/* Resume Button (Direct Download) */}
+            {/* Resume Button (In-Browser Viewer) */}
             <a
               href="/Mihretu_Hizkel_Resume.pdf"
-              download="Mihretu_Hizkel_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 rounded-full transition-all"
-              aria-label="Download Resume/CV"
+              aria-label="View Resume/CV"
             >
               <FileDown className="w-3.5 h-3.5" />
               Resume/CV
@@ -544,7 +545,6 @@ export default function PortfolioPage() {
                 href="/Mihretu_Hizkel_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Mihretu_Hizkel_Resume.pdf"
                 id="hero-view-resume"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

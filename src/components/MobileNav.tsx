@@ -89,15 +89,16 @@ export default function MobileNav({ activeSection }: { activeSection?: string })
                 {/* Divider */}
                 <div className="border-t border-slate-100 dark:border-slate-800 my-2" />
 
-                {/* Resume Download */}
+                {/* Resume PDF Viewer Link */}
                 <a
                   href="/Mihretu_Hizkel_Resume.pdf"
-                  download="Mihretu_Hizkel_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 transition-all"
                 >
                   <FileDown className="w-4 h-4" />
-                  Download Resume/CV
+                  View Resume/CV
                 </a>
 
                 {/* Theme Toggle Row */}
