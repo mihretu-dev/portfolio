@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Heart, Rocket } from "lucide-react";
+import { MapPin, Heart, Sparkles, Smartphone, Code2 } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -10,7 +10,7 @@ export default function AboutSection() {
       id="about"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ amount: 0.2 }}
+      viewport={{ amount: 0.15 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="scroll-mt-20"
     >
@@ -33,31 +33,35 @@ export default function AboutSection() {
           {/* Bio paragraphs */}
           <div className="space-y-4 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-3xl">
             <p>
-              I&apos;m Mihretu Hizkel — a software developer from Hawassa, Ethiopia, 
-              with a B.S. in Information Systems from Hawassa University. I fell in love 
-              with building software during my university years, starting with Java OOP and 
-              MySQL, and quickly expanding into full-stack web development with React, Next.js, 
-              and TypeScript, and native Android development with Kotlin and Jetpack Compose.
+              I&apos;ve been deeply fascinated by software engineering ever since I was young. 
+              My journey into programming truly ignited during the COVID-19 pandemic when a close 
+              friend and I began experimenting and building Android apps from scratch. That early 
+              curiosity quickly evolved into a dedicated passion for creating high-performance, 
+              user-centric digital solutions.
             </p>
             <p>
-              What drives me is the process of turning an idea into something people actually 
-              use — whether that&apos;s an AI-powered resume builder, a contactless hotel ordering 
-              system, or a fitness app that works entirely offline. I care deeply about clean 
-              architecture, thoughtful UI design, and writing code that other developers can 
-              understand and maintain. I&apos;m currently open to full-time and remote opportunities 
-              where I can contribute to meaningful products and grow alongside a strong engineering team.
+              I earned my B.S. in Information Systems from Hawassa University, solidifying my foundations 
+              in object-oriented programming, data structures, and database architecture. Today, I build 
+              modern, offline-first Native Android applications with Kotlin and Jetpack Compose, as well as 
+              scalable full-stack web platforms using Next.js, React, TypeScript, and Node.js. 
+              I care deeply about clean code design, responsive aesthetics, and engineering software 
+              that solves real-world challenges.
             </p>
           </div>
 
           {/* Quick facts */}
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="flex flex-wrap gap-2.5 pt-2">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-xs font-medium text-slate-600 dark:text-slate-400">
               <MapPin className="w-3.5 h-3.5 text-emerald-500" />
               Hawassa, Ethiopia
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-xs font-medium text-slate-600 dark:text-slate-400">
-              <Rocket className="w-3.5 h-3.5 text-emerald-500" />
-              Open to Full-Time & Remote Roles
+              <Smartphone className="w-3.5 h-3.5 text-emerald-500" />
+              Android &amp; Mobile
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 text-xs font-medium text-slate-600 dark:text-slate-400">
+              <Code2 className="w-3.5 h-3.5 text-emerald-500" />
+              Full-Stack Web
             </div>
           </div>
         </div>

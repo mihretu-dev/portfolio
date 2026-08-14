@@ -7,7 +7,7 @@ import { FileDown } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileNav from "@/components/MobileNav";
 
-const navItems = ["Disciplines", "Projects", "Journey", "Contact"];
+const navItems = ["About", "Disciplines", "Projects", "Journey", "Contact"];
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("hero");
