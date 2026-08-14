@@ -779,12 +779,12 @@ export default function PortfolioPage() {
                           {project.title.toLowerCase().replace(/\s+/g, "")}.demo
                         </span>
                       </div>
-                      <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-950">
+                      <div className="relative w-full aspect-video overflow-hidden bg-slate-950">
                         <img
                           src={project.image}
                           alt={`${project.title} Preview screenshot`}
                           loading="lazy"
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                         />
                       </div>
                     </div>
@@ -869,20 +869,20 @@ export default function PortfolioPage() {
                   </button>
 
                   {/* Screenshot Browser Header */}
-                  <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 shadow-md">
-                    <div className="px-4 py-2.5 bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950 shadow-md">
+                    <div className="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-rose-500/80" />
                       <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                       <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                      <span className="ml-2 text-xs font-mono text-slate-500">
+                      <span className="ml-2 text-xs font-mono text-slate-400">
                         https://{selectedProject.title.toLowerCase().replace(/\s+/g, "")}.demo
                       </span>
                     </div>
-                    <div className="relative aspect-video max-h-[360px] overflow-hidden bg-slate-100 dark:bg-slate-950">
+                    <div className="relative w-full aspect-video overflow-hidden bg-slate-950">
                       <img
                         src={selectedProject.image}
                         alt={`${selectedProject.title} Full Preview`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                       />
                     </div>
                   </div>
