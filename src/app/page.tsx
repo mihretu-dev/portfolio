@@ -250,7 +250,35 @@ const heroItemVariants: Variants = {
 export default function PortfolioPage() {
   const [copied, setCopied] = useState(false);
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [activeSection, setActiveSection] = useState<string>("hero");
+  const [isScrolled, setIsScrolled] = useState(false);
   const email = "mihretuhizkel380@gmail.com";
+
+  // Active section scrollspy + scroll shadow tracker
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      const sectionIds = ["hero", "disciplines", "projects", "journey", "contact"];
+      const scrollPos = window.scrollY + 140;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPos >= top) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Lock body scroll & Escape key modal dismiss
   React.useEffect(() => {
@@ -356,8 +384,14 @@ export default function PortfolioPage() {
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-emerald-500/5 dark:bg-slate-900/30 blur-3xl pointer-events-none rounded-full" />
       </div>
 
-      {/* ── Navigation ── */}
-      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-slate-950/75 border-b border-slate-200/80 dark:border-slate-800/60 transition-colors duration-300">
+      {/* ── Persistent Fixed Navigation Bar ── */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/85 dark:bg-slate-950/85 border-b border-slate-200 dark:border-slate-800 shadow-md shadow-slate-950/5 dark:shadow-slate-950/40"
+            : "bg-white/70 dark:bg-slate-950/70 border-b border-slate-200/60 dark:border-slate-800/40"
+        }`}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group" aria-label="Home">
@@ -369,17 +403,32 @@ export default function PortfolioPage() {
             </span>
           </a>
 
-          {/* Nav Links (Desktop) */}
-          <nav className="hidden md:flex items-center gap-8 text-sm text-slate-600 dark:text-slate-400 font-medium">
-            {["Disciplines", "Projects", "Journey", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="hover:text-slate-950 dark:hover:text-slate-100 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-emerald-500 dark:after:bg-emerald-400 hover:after:w-full after:transition-all"
-              >
-                {item}
-              </a>
-            ))}
+          {/* Nav Links (Desktop) with Active Scrollspy Highlight */}
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            {["Disciplines", "Projects", "Journey", "Contact"].map((item) => {
+              const sectionId = item.toLowerCase();
+              const isActive = activeSection === sectionId;
+              return (
+                <a
+                  key={item}
+                  href={`#${sectionId}`}
+                  className={`relative py-1 text-sm font-medium transition-all ${
+                    isActive
+                      ? "text-emerald-600 dark:text-emerald-400 font-semibold"
+                      : "text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-slate-100"
+                  }`}
+                >
+                  {item}
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNavIndicator"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-emerald-500 dark:bg-emerald-400 rounded-full shadow-[0_0_8px_rgba(52,211,153,0.8)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Actions */}
@@ -447,13 +496,13 @@ export default function PortfolioPage() {
             <ThemeToggle />
 
             {/* Mobile Navigation Drawer */}
-            <MobileNav />
+            <MobileNav activeSection={activeSection} />
           </div>
         </div>
       </header>
 
       {/* ── Main Content ── */}
-      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24 space-y-24 md:space-y-32">
+      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-16 md:pb-24 space-y-24 md:space-y-32">
 
         {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
         <section id="hero" className="relative space-y-8 md:pt-8 overflow-visible">

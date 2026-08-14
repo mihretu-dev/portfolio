@@ -6,13 +6,13 @@ import { Menu, X, FileDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { label: "Disciplines", href: "#disciplines" },
-  { label: "Projects", href: "#projects" },
-  { label: "Journey", href: "#journey" },
-  { label: "Contact", href: "#contact" },
+  { label: "Disciplines", href: "#disciplines", id: "disciplines" },
+  { label: "Projects", href: "#projects", id: "projects" },
+  { label: "Journey", href: "#journey", id: "journey" },
+  { label: "Contact", href: "#contact", id: "contact" },
 ];
 
-export default function MobileNav() {
+export default function MobileNav({ activeSection }: { activeSection?: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   // Close on Escape
@@ -65,16 +65,26 @@ export default function MobileNav() {
               className="fixed top-16 left-0 right-0 z-50 mx-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden"
             >
               <nav className="p-4 space-y-1">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isActive = activeSection === link.id;
+                  return (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                        isActive
+                          ? "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold"
+                          : "text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      {isActive && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(52,211,153,0.8)]" />
+                      )}
+                    </a>
+                  );
+                })}
 
                 {/* Divider */}
                 <div className="border-t border-slate-100 dark:border-slate-800 my-2" />
