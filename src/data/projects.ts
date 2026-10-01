@@ -5,12 +5,10 @@ import {
   Users,
   Cpu,
   Smartphone,
-  FileDown,
-  ExternalLink,
+  Mic,
+  Wifi,
 } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
 import type { LucideIcon } from "lucide-react";
-import type { IconType } from "react-icons";
 
 export interface Project {
   title: string;
@@ -30,6 +28,49 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "BirrVoice Ledger",
+    tagline: "Voice-First Financial Ledger for Ethiopian Shopkeepers",
+    description:
+      "An intelligent, voice-first bookkeeping and inventory management web application tailored for Ethiopian SMEs and local retailers. Shopkeepers speak natural Amharic or English commands to effortlessly record sales transactions, track daily expenses, and manage stock levels in real time.",
+    highlights: [
+      "Powered by Voxide Speech AI for natural Amharic and English voice transcription and intent parsing.",
+      "Converts spoken voice commands into structured JSON transactional entries and automatic ledger balancing.",
+      "Live daily inflow/outflow monitoring, net cash margin calculations, and inventory status alerts.",
+      "Deployed and hosted with high availability on EthioDeploy cloud infrastructure.",
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Voice AI", "Amharic NLP", "EthioDeploy"],
+    github: "https://github.com/mihretu-dev/sme-voice-assistant",
+    liveDemo: "https://sme-voice-assistant.ethiodeploy.com/",
+    image: "/projects/sme-voice-assistant.png",
+    icon: Mic,
+    accentColor: "emerald",
+    spotlightGlow: "rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.08)",
+    hoverBorder: "hover:border-emerald-500/50",
+    badgeColor: "text-emerald-500 dark:text-emerald-400",
+  },
+  {
+    title: "MH WiFi Manager",
+    tagline: "Smart & Secure Local WiFi Management Android App",
+    description:
+      "A feature-rich native Android application designed for streamlined local router administration and connected device governance. Features biometric authentication, real-time connected host discovery, scheduled client blocking, and low-latency network speed testing.",
+    highlights: [
+      "Biometric fingerprint authentication for frictionless, secure router admin sign-in.",
+      "Live connected device scanner displaying hostnames, IP/MAC addresses, signal strength (dBm), and lease duration.",
+      "Automated scheduled blocking engine with an intuitive custom clock picker to enforce parental or business network access windows.",
+      "Integrated ping latency and throughput speed test suite with reactive Jetpack Compose UI.",
+      "Production-ready v1.0.0 APK release binary available for direct Android installation.",
+    ],
+    tech: ["Kotlin", "Jetpack Compose", "Android SDK", "Biometrics", "Network Security", "APK Released"],
+    github: "https://github.com/mihretu-dev/Wi-Fi-Device-Manager",
+    apkDownload: "https://github.com/mihretu-dev/Wi-Fi-Device-Manager/releases/tag/v1.0.0",
+    image: "/projects/wifi-device-manager.png",
+    icon: Wifi,
+    accentColor: "cyan",
+    spotlightGlow: "rgba(6, 182, 212, 0.25), rgba(59, 130, 246, 0.08)",
+    hoverBorder: "hover:border-cyan-500/50",
+    badgeColor: "text-cyan-500 dark:text-cyan-400",
+  },
   {
     title: "HR System",
     tagline: "Java-based Human Resource Management Application",

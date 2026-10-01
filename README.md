@@ -1,90 +1,147 @@
-# 🌐 Personal Portfolio & Software Developer Showcase
+# 🌐 Mihretu Hizkel — Developer Portfolio & Systems Showcase
 
-Modern, high-performance developer portfolio built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
+<div align="center">
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-purple?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
-[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_Demo-000000?style=for-the-badge&logo=vercel)](https://portfolio-tan-one-84.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2_(Turbopack)-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.0-EA4C89?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Vercel-Live_Deployment-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-tan-one-84.vercel.app/)
+
+<br />
+
+**A sleek, high-performance software engineering portfolio and project showcase.**  
+Designed with a clean terminal-inspired aesthetic, fluid physics-based micro-interactions, responsive dark/light theme fidelity, and modular component architecture.
+
+[Explore Live Portfolio](https://portfolio-tan-one-84.vercel.app/) • [View Resume](https://portfolio-tan-one-84.vercel.app/resume) • [Get in Touch](#-connect--contact)
+
+</div>
 
 ---
 
 ## 📌 Overview
 
-This is the official portfolio website of **Mihretu Hizkel**, a Full-Stack Software Developer and Information Systems Graduate focused on building high-performance Native Android applications (Kotlin, Jetpack Compose, Room DB) and scalable full-stack web solutions.
+This repository hosts the official source code for **Mihretu Hizkel's** personal portfolio. It showcases full-stack web platforms, native Android applications, and enterprise systems, reflecting strong foundations in OOP architecture, clean UI design, and cloud deployments.
 
-🔗 **Live Portfolio**: [https://portfolio-tan-one-84.vercel.app/](https://portfolio-tan-one-84.vercel.app/)
-
-The portfolio features a sleek, minimalist software engineering aesthetic, smooth Framer Motion animations, interactive project modals, and an automated resume viewer.
+- 🚀 **Live URL**: [https://portfolio-tan-one-84.vercel.app/](https://portfolio-tan-one-84.vercel.app/)
+- 👨‍💻 **Developer**: Mihretu Hizkel (B.S. in Information Systems, Hawassa University)
+- 📍 **Focus**: Full-Stack Web Development, Native Android Apps (Kotlin / Jetpack Compose), and Scalable Distributed Systems.
 
 ---
 
-## ⚡ Key Features & Sections
+## 🚀 Featured Projects
 
-- **⚡ Hero & Interactive Tech Stack**: Minimalist hero section showcasing core developer identity, status indicator (`location: Hawassa, ET`), and unified technology pills.
-- **🛠️ Disciplines & Expertise**: Structured technical breakdown across Full-Stack Web Development, Systems Architecture, Relational Databases, AI Integration, and Native Android Apps.
-- **🚀 Featured Projects Showcase**: Interactive project cards with full modal previews and real product screenshots:
-  - **Home Workout Android App**: Native Kotlin & Jetpack Compose fitness tracker with Room DB and direct v1.0.0 APK release download link.
-  - **MH GPA Calculator v2**: Academic performance calculator and cumulative CGPA simulation tool.
-  - **AI Resume Builder**: LLM-assisted resume builder with real-time PDF preview and ATS optimization.
-  - **QR Hotel Menu System**: Contactless digital menu and order workflow platform.
-  - **Java HR System**: Enterprise OOP-based employee payroll and attendance tracking system.
-  - **Instagram Follower Analyzer**: Sleek 100% client-side Instagram follower analytics & connection timeline tool.
-- **🎓 Academic & Career Journey**: Refined timeline documenting academic milestones at Hawassa University, full-stack software development projects, and current career focus.
-- **📄 Live Resume Page**: Dedicated print-optimized resume route (`/resume`) formatted for clean PDF export.
-- **📬 Contact Section**: Direct contact form and social channel links (GitHub, LinkedIn, Instagram, Telegram).
+| Project | Description | Stack | Links |
+|:---|:---|:---|:---|
+| **BirrVoice Ledger** | Voice-first financial bookkeeping and inventory management for Ethiopian shopkeepers with natural Amharic/English NLP. | `Next.js` `TypeScript` `Voice AI` `Amharic NLP` `EthioDeploy` | [Live Demo](https://sme-voice-assistant.ethiodeploy.com/) • [GitHub](https://github.com/mihretu-dev/sme-voice-assistant) |
+| **MH WiFi Manager** | Native Android router administration tool featuring biometric authentication, real-time client inspection, scheduled device blocking, and speed testing. | `Kotlin` `Jetpack Compose` `Android SDK` `Biometrics` `Network Security` | [Download APK](https://github.com/mihretu-dev/Wi-Fi-Device-Manager/releases/tag/v1.0.0) • [GitHub](https://github.com/mihretu-dev/Wi-Fi-Device-Manager) |
+| **Home Workout App** | Offline-first Android fitness tracking application with custom workout builder, Room DB persistence, and MVVM architecture. | `Kotlin` `Jetpack Compose` `Room DB` `Coroutines` | [Download APK](https://github.com/mihretu-dev/HomeWorkoutApp/releases/latest/download/TrainingHub.apk) • [GitHub](https://github.com/mihretu-dev/HomeWorkoutApp) |
+| **AI Resume Builder** | Intelligent web application that optimizes raw experience, generates ATS-tailored PDF resumes, and exports structured JSON schemas. | `Next.js` `TypeScript` `Tailwind CSS` `AI APIs` | [Live Demo](https://ai-resume-builder-wr7g.vercel.app/) • [GitHub](https://github.com/mihretu-dev/ai-resume-builder) |
+| **GPA Calculator** | Academic performance tracker and semester GPA forecasting tool with weighted credit calculations. | `React` `Next.js` `Tailwind CSS` `TypeScript` | [Live Demo](https://gpa-calculator-nu-nine.vercel.app/) • [GitHub](https://github.com/mihretu-dev/GPA_Calculator) |
+| **QR Hotel Menu** | Contactless restaurant ordering platform with dynamic table QR scanning and live kitchen ticket management. | `React` `Node.js` `MySQL` `Tailwind CSS` | [Live Demo](https://qr-hotel-menu-cyan.vercel.app/) • [GitHub](https://github.com/mihretu-dev/qr-hotel-menu) |
+| **Java HR System** | Enterprise human resource management desktop application with role-based access control and payroll automation. | `Java` `OOP` `MySQL` `Systems Design` | [GitHub](https://github.com/mihretu-dev/HRSystem) |
+| **Instagram Follower Analyzer** | 100% client-side privacy-first Instagram analytics tool for tracking unfollowers, mutual connections, and follow history with zero logins. | `React` `JavaScript` `Tailwind CSS` `Analytics` | [Live Demo](https://insta-analyzer-rho.vercel.app/) • [GitHub](https://github.com/mihretu-dev/Insta_analyzer) |
+
+---
+
+## ⚡ Key Architecture & Highlights
+
+- **⚡ Next.js App Router & Turbopack**: Blazing-fast static generation, optimized hydration, and instant compilation.
+- **🎨 Glassmorphic Dark / Light UI**: Engineered with custom CSS variables, refined typography, and accessible high-contrast color palettes.
+- **✨ Fluid Framer Motion Animations**: Scroll-triggered section reveals, interactive mouse spotlight gradients, and animated modals with body scroll-locking and keyboard escape dismiss.
+- **📱 Modular & Decoupled Architecture**: Clean separation between presentation components (`/src/components`), datasets (`/src/data`), and application routes (`/src/app`).
+- **📄 Print-Optimized Resume Route**: Fully styled dedicated route at `/resume` with direct PDF download integration.
+- **🎯 100% Responsive Design**: Tested across ultra-wide monitors, laptops, tablets, and mobile viewports.
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Category | Technologies |
-|---|---|
-| **Framework & Language** | Next.js (App Router), React 19, TypeScript |
-| **Styling & Design System** | Tailwind CSS v4, Lucide Icons, React Icons |
-| **Animations & Motion** | Framer Motion (Scroll animations, modals, transitions) |
-| **Asset Optimization** | Next.js Image Optimization, High-Res Production Screenshots |
-| **Hosting & Deployment** | Vercel Platform |
+```
+Frontend Core       Next.js 16 (App Router), React 19, TypeScript
+Styling             Tailwind CSS v4, Lucide Icons, React Icons
+Animation           Framer Motion
+Deployment          Vercel Platform (CI/CD Automated Deployments)
+Package Manager     npm
+```
 
 ---
 
-## 🚀 Getting Started (Local Development)
+## 📂 Project Structure
+
+```bash
+portfolio/
+├── public/
+│   ├── projects/          # High-resolution application screenshots
+│   ├── Mihretu_Hizkel_Resume.pdf
+│   └── favicon / icons
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx     # Root layout, metadata & font definitions
+│   │   ├── page.tsx       # Main single-page portfolio layout
+│   │   └── resume/
+│   │       └── page.tsx   # Print-ready live resume route
+│   ├── components/
+│   │   ├── Header.tsx           # Fixed glassmorphic navigation bar
+│   │   ├── HeroSection.tsx      # Terminal-themed hero & bio
+│   │   ├── AboutSection.tsx     # Background & engineering focus
+│   │   ├── ProjectsSection.tsx  # Project grid & spotlight interaction
+│   │   ├── ProjectModal.tsx     # Detailed project preview modal
+│   │   ├── SkillsSection.tsx    # Technical skills matrix
+│   │   ├── JourneySection.tsx   # Interactive milestones timeline
+│   │   ├── ContactSection.tsx   # Contact channels & inquiry form
+│   │   └── Footer.tsx           # Footer copyright & quick links
+│   └── data/
+│       ├── projects.ts    # Centralized project records & metadata
+│       ├── skills.ts      # Core skills & tools categorization
+│       └── journey.ts     # Academic & career milestones
+└── tailwind.config / tsconfig / package.json
+```
+
+---
+
+## 🚀 Getting Started Locally
 
 ### Prerequisites
-- Node.js (v18.0 or higher)
-- npm or yarn
+- **Node.js** >= 18.18.0
+- **npm** >= 9.0.0
 
-### Installation & Setup
+### Installation
 
-1. **Clone the Repository**:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/mihretu-dev/portfolio.git
    cd portfolio
    ```
 
-2. **Install Dependencies**:
+2. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Start Development Server**:
+3. **Start the local development server**:
    ```bash
    npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-4. **Production Build**:
+4. **Build for production**:
    ```bash
    npm run build
+   npm run start
    ```
 
 ---
 
-## 📄 License & Contact
+## 📬 Connect & Contact
 
-Designed and developed by **Mihretu Hizkel**. Open for full-time and remote software engineering roles.
-
+- **Portfolio**: [portfolio-tan-one-84.vercel.app](https://portfolio-tan-one-84.vercel.app/)
 - **GitHub**: [@mihretu-dev](https://github.com/mihretu-dev)
 - **LinkedIn**: [Mihretu Hizkel](https://www.linkedin.com/in/mihretu-hizkel-734105260/)
 - **Telegram**: [@Mihretu_H](https://t.me/Mihretu_H)
+
+---
+
+<div align="center">
+  <sub>© 2026 Mihretu Hizkel. Built with Next.js, TypeScript & Tailwind CSS.</sub>
+</div>
