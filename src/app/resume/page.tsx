@@ -15,6 +15,8 @@ import {
   Briefcase,
   ExternalLink,
   FileDown,
+  Award,
+  CheckCircle2,
 } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -25,7 +27,7 @@ export default function ResumePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-cyan-500 selection:text-slate-950 print:bg-white print:text-slate-950 print:min-h-0 transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950 print:bg-white print:text-slate-950 print:min-h-0 transition-colors duration-300">
       {/* ── Top Bar (Screen Only) ── */}
       <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 py-3.5 px-4 sm:px-8 print:hidden transition-colors duration-300">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
@@ -51,7 +53,7 @@ export default function ResumePage() {
               onClick={handlePrint}
               className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-200 font-medium text-xs sm:text-sm transition-all shadow-sm"
             >
-              <Printer className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+              <Printer className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               Print Page
             </button>
           </div>
@@ -66,7 +68,7 @@ export default function ResumePage() {
           <div className="border-b border-slate-200 dark:border-slate-800/80 pb-6 space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div className="space-y-1">
-                <div className="inline-flex items-center gap-2 text-xs font-mono text-cyan-600 dark:text-cyan-400">
+                <div className="inline-flex items-center gap-2 text-xs font-mono text-emerald-600 dark:text-emerald-400">
                   <Terminal className="w-3.5 h-3.5" />
                   <span>resume.config.ts</span>
                 </div>
@@ -74,7 +76,7 @@ export default function ResumePage() {
                   MIHRETU HIZKEL
                 </h1>
                 <p className="text-lg sm:text-xl font-semibold bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-500 dark:from-emerald-400 dark:via-teal-300 dark:to-indigo-400 bg-clip-text text-transparent">
-                  Full-Stack Web &amp; Android Developer
+                  Full-Stack Web &amp; Native Android Developer
                 </p>
               </div>
 
@@ -82,47 +84,47 @@ export default function ResumePage() {
               <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono text-slate-600 dark:text-slate-400">
                 <a
                   href="mailto:mihretuhizkel380@gmail.com"
-                  className="flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                  className="flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <Mail className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   mihretuhizkel380@gmail.com
                 </a>
                 <a
                   href="tel:+251961402380"
-                  className="flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                  className="flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 >
-                  <Phone className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <Phone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   +251961402380
                 </a>
                 <a
                   href="https://portfolio-tan-one-84.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                  className="flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 >
-                  <Globe className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <Globe className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   portfolio-tan-one-84.vercel.app
                 </a>
                 <a
                   href="https://github.com/mihretu-dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                  className="flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 >
-                  <FaGithub className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <FaGithub className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   github.com/mihretu-dev
                 </a>
                 <a
                   href="https://www.linkedin.com/in/mihretu-hizkel-734105260/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                  className="flex items-center gap-1.5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 >
-                  <FaLinkedin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <FaLinkedin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   LinkedIn
                 </a>
                 <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
-                  <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+                  <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   Hawassa, Ethiopia
                 </span>
               </div>
@@ -141,31 +143,31 @@ export default function ResumePage() {
                   <Code2 className="w-4 h-4" />
                   <span>// Tech Stack</span>
                 </div>
-                <div className="space-y-2 text-xs text-slate-700 dark:text-slate-300">
+                <div className="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
                   <div>
                     <span className="font-bold text-slate-900 dark:text-slate-200">Languages &amp; Core:</span>
                     <p className="text-slate-600 dark:text-slate-400 font-mono text-[11px] mt-0.5">
-                      Java, Kotlin, TypeScript, JavaScript, Python, C++, SQL
+                      Kotlin, Java, TypeScript, JavaScript, Python, C++, SQL
                     </p>
                   </div>
                   <div>
-                    <span className="font-bold text-slate-900 dark:text-slate-200">Frameworks &amp; Libraries:</span>
+                    <span className="font-bold text-slate-900 dark:text-slate-200">Frameworks &amp; Mobile:</span>
                     <p className="text-slate-600 dark:text-slate-400 font-mono text-[11px] mt-0.5">
-                      Next.js, React, Node.js, Android SDK, Jetpack Compose, Tailwind CSS
+                      Android SDK, Jetpack Compose, Room DB, Next.js (App Router), React, Node.js, Tailwind CSS
                     </p>
                   </div>
                   <div>
                     <span className="font-bold text-slate-900 dark:text-slate-200">Cloud &amp; DevOps:</span>
                     <p className="text-slate-600 dark:text-slate-400 font-mono text-[11px] mt-0.5">
-                      Vercel, Git/GitHub Actions, PostgreSQL
+                      Vercel, EthioDeploy, Git/GitHub Actions, MySQL, PostgreSQL
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Education & Academic Metrics */}
+              {/* Education */}
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-indigo-600 dark:text-indigo-400 uppercase font-bold">
+                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-teal-600 dark:text-teal-400 uppercase font-bold">
                   <GraduationCap className="w-4 h-4" />
                   <span>// Education</span>
                 </div>
@@ -173,37 +175,49 @@ export default function ResumePage() {
                   <h4 className="text-sm font-bold text-slate-950 dark:text-white">
                     Hawassa University
                   </h4>
-                  <p className="text-xs font-medium text-emerald-600 dark:text-emerald-400">
-                    Bachelor of Science in Information System
+                  <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                    B.S. in Information Systems
                   </p>
                   <p className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                    2023-03 — 2026-06 | Hawassa, Ethiopia
+                    2023 – 2026 | Hawassa, Ethiopia
                   </p>
                   <div className="pt-2 border-t border-slate-200 dark:border-slate-800/80 text-xs font-mono text-slate-700 dark:text-slate-300">
-                    GPA: <span className="font-bold text-emerald-600 dark:text-emerald-400">3.19 / 4.00</span> With National Exit Exam Score of <span className="font-bold text-cyan-600 dark:text-cyan-400">85%</span>
+                    GPA: <span className="font-bold text-emerald-600 dark:text-emerald-400">3.19 / 4.00</span> • Exit Exam: <span className="font-bold text-cyan-600 dark:text-cyan-400">85%</span>
                   </div>
                 </div>
               </div>
 
-              {/* Work Experience */}
+              {/* Certifications */}
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-cyan-600 dark:text-cyan-400 uppercase font-bold">
-                  <Briefcase className="w-4 h-4" />
-                  <span>// Work Experience</span>
+                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-indigo-600 dark:text-indigo-400 uppercase font-bold">
+                  <Award className="w-4 h-4" />
+                  <span>// Certifications</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-sm">
-                  <h4 className="text-xs font-bold text-slate-950 dark:text-white">
-                    ICT, Networking sector intern
-                  </h4>
-                  <p className="text-xs font-medium text-teal-600 dark:text-teal-400">
-                    South Ethiopia Finance Bureau
-                  </p>
-                  <p className="text-[10px] font-mono text-slate-500 dark:text-slate-400">
-                    2025-07 — 2025-09 (South, Ethiopia)
-                  </p>
-                  <p className="text-xs text-slate-700 dark:text-slate-300 pt-1">
-                    • Made a website that mentors new interns in this sector
-                  </p>
+                <div className="space-y-2 text-xs">
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-sm">
+                    <h5 className="font-bold text-slate-900 dark:text-white">
+                      Agri-Tech Innovator: Beta Testing Specialist
+                    </h5>
+                    <p className="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium">
+                      FarmVizion • Issued Sep 2026
+                    </p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-sm">
+                    <h5 className="font-bold text-slate-900 dark:text-white">
+                      CS50x: Introduction to Computer Science
+                    </h5>
+                    <p className="text-[11px] text-indigo-600 dark:text-indigo-400 font-medium">
+                      Harvard University / CS50 • Passed
+                    </p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-1 shadow-sm">
+                    <h5 className="font-bold text-slate-900 dark:text-white">
+                      B.S. in Information Systems
+                    </h5>
+                    <p className="text-[11px] text-teal-600 dark:text-teal-400 font-medium">
+                      Hawassa University • Class of 2026
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -214,114 +228,182 @@ export default function ResumePage() {
               
               {/* Professional Summary */}
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-cyan-600 dark:text-cyan-400 uppercase font-bold">
+                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase font-bold">
                   <Terminal className="w-4 h-4" />
                   <span>// Professional Summary</span>
                 </div>
                 <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                  Information Systems graduate and Full-Stack Software Developer focused on building high-performance web applications, native Android tools, and enterprise database systems. Skilled in Java, Kotlin, TypeScript, React, Next.js, Android SDK, and relational MySQL architecture.
+                  Information Systems graduate and Full-Stack &amp; Native Android Developer focused on building high-performance mobile applications (Kotlin, Jetpack Compose, Room DB) and scalable web platforms (Next.js, React, TypeScript). Experienced in pre-production QA, international beta testing for voice AI, and database-driven system architectures.
                 </p>
               </div>
 
-              {/* Key Projects */}
-              <div className="space-y-5">
+              {/* Work Experience */}
+              <div className="space-y-4">
                 <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase font-bold">
                   <Briefcase className="w-4 h-4" />
-                  <span>// Key Projects</span>
+                  <span>// Work Experience</span>
                 </div>
 
                 <div className="space-y-4">
-                  
-                  {/* 1. GPA Calculator */}
+                  {/* 1. AgriMocks */}
+                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-2 shadow-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                      <div>
+                        <h4 className="text-base font-bold text-slate-950 dark:text-white">
+                          Sales and Marketing Intern
+                        </h4>
+                        <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                          AgriMocks • Remote
+                        </p>
+                      </div>
+                      <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                        Sep 2026 – Present
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 italic">
+                      Digital marketing campaigns, agricultural demographic engagement, international market research, and user acquisition strategies.
+                    </p>
+                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1 pl-4 list-disc">
+                      <li>Drive targeted digital marketing campaigns engaging diverse agricultural demographics and agri-tech user segments.</li>
+                      <li>Conduct international market research and demographic analysis to optimize product positioning and user acquisition funnels.</li>
+                      <li>Implement community outreach initiatives and data-informed growth strategies.</li>
+                    </ul>
+                  </div>
+
+                  {/* 2. FarmVizion */}
+                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-2 shadow-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                      <div>
+                        <h4 className="text-base font-bold text-slate-950 dark:text-white">
+                          Software Quality Assurance Tester
+                        </h4>
+                        <p className="text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+                          FarmVizion • Remote
+                        </p>
+                      </div>
+                      <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                        Sep 2026 – Present
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 italic">
+                      Pre-production QA, beta testing, and stability analysis for the FarmVizion Android app &amp; AIVA voice assistant across 176 countries; usability bug reporting and friction-point documentation.
+                    </p>
+                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1 pl-4 list-disc">
+                      <li>Execute pre-production QA cycles, stress testing, and stability audits for the FarmVizion Native Android app.</li>
+                      <li>Evaluate AIVA voice assistant intent accuracy, latency, and reliability across user scenarios in 176 countries.</li>
+                      <li>Identify UI/UX friction points, document reproduction steps for edge-case defects, and collaborate closely with engineering.</li>
+                    </ul>
+                  </div>
+
+                  {/* 3. Freelance / Self-Employed */}
+                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-2 shadow-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                      <div>
+                        <h4 className="text-base font-bold text-slate-950 dark:text-white">
+                          Full-Stack &amp; Native Android Developer
+                        </h4>
+                        <p className="text-xs font-semibold text-purple-600 dark:text-purple-400">
+                          Freelance / Self-Employed • Hybrid
+                        </p>
+                      </div>
+                      <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                        Jan 2025 – Present
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 italic">
+                      Building offline-first Android apps with Kotlin, Jetpack Compose, Coroutines, and Room DB; developing high-performance full-stack web platforms using Next.js, React, TypeScript, Node.js, and Tailwind CSS.
+                    </p>
+                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1 pl-4 list-disc">
+                      <li>Architect offline-first Native Android apps leveraging Kotlin, Jetpack Compose, Room DB, and reactive StateFlow (MH WiFi Manager, TrainingHub).</li>
+                      <li>Develop high-performance full-stack web platforms using Next.js (App Router), React, TypeScript, and Tailwind CSS.</li>
+                      <li>Deploy production-ready solutions with CI/CD automation and direct APK release distribution.</li>
+                    </ul>
+                  </div>
+
+                  {/* 4. South Ethiopia Finance Institute */}
+                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-2 shadow-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                      <div>
+                        <h4 className="text-base font-bold text-slate-950 dark:text-white">
+                          Network Administrator Intern
+                        </h4>
+                        <p className="text-xs font-semibold text-amber-600 dark:text-amber-400">
+                          South Ethiopia Finance Institute ICT Sector • On-site
+                        </p>
+                      </div>
+                      <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                        Jul 2025 – Sep 2025
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 italic">
+                      Network infrastructure support, database administration routines, and system maintenance.
+                    </p>
+                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1 pl-4 list-disc">
+                      <li>Provided ICT infrastructure administration, local router/switch diagnostics, and secure network provisioning.</li>
+                      <li>Maintained routine database backups, MySQL integrity audits, and user access management.</li>
+                      <li>Engineered an internal web portal to onboard and mentor incoming interns across the department.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Featured Projects */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-600 dark:text-emerald-400 uppercase font-bold">
+                  <Briefcase className="w-4 h-4" />
+                  <span>// Key Featured Projects</span>
+                </div>
+
+                <div className="space-y-4">
+                  {/* BirrVoice Ledger */}
                   <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-2 shadow-sm">
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h4 className="text-base font-bold text-slate-950 dark:text-white flex items-center gap-2">
-                          GPA Calculator - Academic Performance Tool
+                          BirrVoice Ledger - Voice-First Financial Assistant
                           <a
-                            href="https://gpa-calculator-nu-nine.vercel.app/"
+                            href="https://sme-voice-assistant.ethiodeploy.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs text-cyan-600 dark:text-cyan-400 hover:underline inline-flex items-center gap-1 font-mono"
+                            className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1 font-mono"
                           >
-                            [Link] <ExternalLink className="w-3 h-3" />
+                            [Demo] <ExternalLink className="w-3 h-3" />
                           </a>
                         </h4>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 shrink-0">
-                        Next.js • TypeScript • Tailwind CSS • React
+                        Next.js • Voice AI • Amharic NLP • EthioDeploy
                       </span>
                     </div>
-                    <p className="text-xs italic text-slate-600 dark:text-slate-400">
-                      Interactive web app designed for students to calculate course grades, simulate cumulative GPA scenarios, and visualize semester progression. Deployed live on Vercel
+                    <p className="text-xs text-slate-600 dark:text-slate-400">
+                      Voice-first financial ledger and inventory platform for Ethiopian shopkeepers. Translates spoken natural Amharic/English into structured transaction records and live cash-margin analytics.
                     </p>
-                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1 pl-4 list-disc">
-                      <li>Real-time weighted credit calculation and dynamic target GPA forecasting.</li>
-                      <li>Clean, distraction-free interface built with Next.js and Tailwind CSS.</li>
-                      <li>Local state persistence for instant session saving and quick updates.</li>
-                    </ul>
                   </div>
 
-                  {/* 2. AI Resume Builder */}
+                  {/* MH WiFi Manager */}
                   <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-2 shadow-sm">
                     <div className="flex items-start justify-between gap-2">
                       <div>
                         <h4 className="text-base font-bold text-slate-950 dark:text-white flex items-center gap-2">
-                          AI Resume Builder - AI-Powered Career &amp; Resume Generator
+                          MH WiFi Manager - Local Device Governance App
                           <a
-                            href="https://github.com/mihretu-dev"
+                            href="https://github.com/mihretu-dev/Wi-Fi-Device-Manager/releases/tag/v1.0.0"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-xs text-cyan-600 dark:text-cyan-400 hover:underline inline-flex items-center gap-1 font-mono"
                           >
-                            [Link] <ExternalLink className="w-3 h-3" />
+                            [APK] <ExternalLink className="w-3 h-3" />
                           </a>
                         </h4>
                       </div>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 shrink-0">
-                        React • Next.js • Tailwind CSS • Gemini API
+                        Kotlin • Jetpack Compose • Biometrics • APK
                       </span>
                     </div>
-                    <p className="text-xs italic text-slate-600 dark:text-slate-400">
-                      Intelligent web app that parses raw developer experience text, optimizes content using LLM APIs, formats tailored PDF resumes, and exports structured JSON portfolio schemas.
+                    <p className="text-xs text-slate-600 dark:text-slate-400">
+                      Native Android network utility with biometric login, real-time client discovery, scheduled device blocking, and bandwidth speed testing.
                     </p>
-                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1 pl-4 list-disc">
-                      <li>LLM-driven resume optimization and automated skill extraction from raw text.</li>
-                      <li>Structured JSON schema export for seamless personal portfolio synchronization.</li>
-                      <li>Real-time PDF document rendering with customizable minimalist themes.</li>
-                    </ul>
                   </div>
-
-                  {/* 3. Instagram Analyzer */}
-                  <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 space-y-2 shadow-sm">
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <h4 className="text-base font-bold text-slate-950 dark:text-white flex items-center gap-2">
-                          Instagram Analyzer - Client-Side Connection Analytics Tool
-                          <a
-                            href="https://insta-analyzer-rho.vercel.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-xs text-cyan-600 dark:text-cyan-400 hover:underline inline-flex items-center gap-1 font-mono"
-                          >
-                            [Link] <ExternalLink className="w-3 h-3" />
-                          </a>
-                        </h4>
-                      </div>
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 shrink-0">
-                        React • JavaScript • Tailwind CSS
-                      </span>
-                    </div>
-                    <p className="text-xs italic text-slate-600 dark:text-slate-400">
-                      Sleek, private, 100% client-side Instagram follower analyzer &amp; connection timeline tool. Track unfollowers, mutual connections, and follow history with zero login credentials required.
-                    </p>
-                    <ul className="text-xs text-slate-700 dark:text-slate-300 space-y-1 pl-4 list-disc">
-                      <li>100% client-side data parsing — zero login credentials or server uploads required for complete privacy.</li>
-                      <li>Comprehensive analytics for unfollowers, non-followers, mutual connections, and account fans.</li>
-                      <li>Interactive follow timeline and engagement analytics built with React and Tailwind CSS.</li>
-                    </ul>
-                  </div>
-
                 </div>
               </div>
 
@@ -337,7 +419,7 @@ export default function ResumePage() {
         </div>
       </main>
 
-      {/* ── ATS-Friendly Print View (Exact Template Match) ── */}
+      {/* ── ATS-Friendly Print View (Exact Clean Resume Match) ── */}
       <div className="hidden print:block text-black font-sans text-[10px] leading-tight space-y-2.5 p-1">
         
         {/* Header */}
@@ -346,53 +428,122 @@ export default function ResumePage() {
             MIHRETU HIZKEL
           </h1>
           <p className="text-[11px] font-bold text-black">
-            Full-Stack Web &amp; Android Developer
+            Full-Stack Web &amp; Native Android Developer
           </p>
-          <div className="text-[9.5px] text-slate-900 flex flex-wrap items-center gap-x-2 gap-y-0.5 font-normal">
+          <div className="text-[9.5px] text-slate-900 flex flex-wrap items-center gap-x-2.5 gap-y-0.5 font-normal">
             <a href="mailto:mihretuhizkel380@gmail.com" className="text-black hover:underline">
               mihretuhizkel380@gmail.com
             </a>
             <span>+251961402380</span>
             <span>Hawassa, Ethiopia</span>
             <a href="https://portfolio-tan-one-84.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
-              portfolio-tan-one-84.vercel.app/
-            </a>
-            <a href="https://www.linkedin.com/in/mihretu-hizkel-734105260/" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
-              www.linkedin.com/in/mihretu-hizkel-734105260/
+              portfolio-tan-one-84.vercel.app
             </a>
             <a href="https://github.com/mihretu-dev" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
               github.com/mihretu-dev
+            </a>
+            <a href="https://www.linkedin.com/in/mihretu-hizkel-734105260/" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">
+              linkedin.com/in/mihretu-hizkel-734105260
             </a>
           </div>
         </div>
 
         {/* Professional Summary */}
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-300 pb-0.5">
             PROFESSIONAL SUMMARY
           </h2>
           <p className="text-[9.5px] text-slate-900 leading-normal">
-            Information Systems graduate and Full-Stack Software Developer focused on building high-performance web applications, native Android tools, and enterprise database systems. Skilled in Java, Kotlin, TypeScript, React, Next.js, Android SDK, and relational MySQL architecture.
+            Information Systems graduate and Full-Stack &amp; Native Android Developer focused on building high-performance mobile applications (Kotlin, Jetpack Compose, Room DB) and scalable web platforms (Next.js, React, TypeScript). Experienced in pre-production QA, international beta testing for voice AI, and database-driven system architectures.
           </p>
         </div>
 
         {/* Work Experience */}
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-300 pb-0.5">
             WORK EXPERIENCE
           </h2>
+
+          {/* 1. AgriMocks */}
           <div>
             <div className="flex justify-between items-baseline text-[10px]">
               <strong className="text-black font-bold">
-                ICT, Networking sector intern | South Ethiopia Finance Bureau
+                Sales and Marketing Intern | AgriMocks (Remote)
               </strong>
-              <span className="text-black font-semibold text-[9.5px]">
-                2025-07 — 2025-09 (South, Ethiopia)
+              <span className="text-black font-semibold text-[9px]">
+                Sep 2026 – Present
               </span>
             </div>
-            <ul className="list-disc pl-4 text-[9.5px] text-slate-900 mt-0.5">
-              <li>Made a website that mentors new interns in this sector</li>
+            <ul className="list-disc pl-4 text-[9.5px] text-slate-900 mt-0.5 space-y-0.5">
+              <li>Drive digital marketing campaigns targeting agricultural demographics and user acquisition strategies.</li>
+              <li>Conduct international market research to optimize product positioning and consumer outreach.</li>
             </ul>
+          </div>
+
+          {/* 2. FarmVizion */}
+          <div>
+            <div className="flex justify-between items-baseline text-[10px]">
+              <strong className="text-black font-bold">
+                Software Quality Assurance Tester | FarmVizion (Remote)
+              </strong>
+              <span className="text-black font-semibold text-[9px]">
+                Sep 2026 – Present
+              </span>
+            </div>
+            <ul className="list-disc pl-4 text-[9.5px] text-slate-900 mt-0.5 space-y-0.5">
+              <li>Execute pre-production QA, beta testing, and stability audits for the FarmVizion Android app &amp; AIVA voice assistant across 176 countries.</li>
+              <li>Document usability bug reports, reproduction steps, and stability analysis for engineering teams.</li>
+            </ul>
+          </div>
+
+          {/* 3. Freelance */}
+          <div>
+            <div className="flex justify-between items-baseline text-[10px]">
+              <strong className="text-black font-bold">
+                Full-Stack &amp; Native Android Developer | Freelance / Self-Employed (Hybrid)
+              </strong>
+              <span className="text-black font-semibold text-[9px]">
+                Jan 2025 – Present
+              </span>
+            </div>
+            <ul className="list-disc pl-4 text-[9.5px] text-slate-900 mt-0.5 space-y-0.5">
+              <li>Architect offline-first Native Android apps with Kotlin, Jetpack Compose, Coroutines, and Room DB.</li>
+              <li>Develop high-performance full-stack web applications using Next.js, React, TypeScript, and Node.js.</li>
+            </ul>
+          </div>
+
+          {/* 4. South Ethiopia Finance Institute */}
+          <div>
+            <div className="flex justify-between items-baseline text-[10px]">
+              <strong className="text-black font-bold">
+                Network Administrator Intern | South Ethiopia Finance Institute ICT Sector (On-site)
+              </strong>
+              <span className="text-black font-semibold text-[9px]">
+                Jul 2025 – Sep 2025
+              </span>
+            </div>
+            <ul className="list-disc pl-4 text-[9.5px] text-slate-900 mt-0.5 space-y-0.5">
+              <li>Provided ICT network infrastructure support, database administration routines, and system maintenance.</li>
+              <li>Developed an internal web portal to onboard and mentor incoming interns.</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Certifications & Credentials */}
+        <div className="space-y-1">
+          <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-300 pb-0.5">
+            CERTIFICATIONS &amp; CREDENTIALS
+          </h2>
+          <div className="space-y-0.5 text-[9.5px]">
+            <p>
+              <strong className="text-black font-bold">Agri-Tech Innovator: Beta Testing Specialist</strong> — FarmVizion (Issued Sep 2026)
+            </p>
+            <p>
+              <strong className="text-black font-bold">CS50x: Introduction to Computer Science</strong> — Harvard University / CS50 (Passed)
+            </p>
+            <p>
+              <strong className="text-black font-bold">B.S. in Information Systems</strong> — Hawassa University (Graduated Class of 2026)
+            </p>
           </div>
         </div>
 
@@ -403,112 +554,33 @@ export default function ResumePage() {
           </h2>
           <div className="space-y-0.5 text-[9.5px]">
             <p>
-              <strong className="text-black font-bold">Languages &amp; Core:</strong> Java, Kotlin, TypeScript, JavaScript, Python, C++, SQL
+              <strong className="text-black font-bold">Languages &amp; Core:</strong> Kotlin, Java, TypeScript, JavaScript, Python, C++, SQL
             </p>
             <p>
-              <strong className="text-black font-bold">Frameworks &amp; Libraries:</strong> Next.js, React, Node.js, Android SDK, Jetpack Compose, Tailwind CSS
+              <strong className="text-black font-bold">Frameworks &amp; Mobile:</strong> Android SDK, Jetpack Compose, Room DB, Next.js, React, Node.js, Tailwind CSS
             </p>
             <p>
-              <strong className="text-black font-bold">Cloud &amp; DevOps:</strong> Vercel, Git/GitHub Actions, PostgreSQL
+              <strong className="text-black font-bold">Cloud &amp; Databases:</strong> Vercel, EthioDeploy, Git/GitHub Actions, MySQL, PostgreSQL
             </p>
-          </div>
-        </div>
-
-        {/* Key Projects */}
-        <div className="space-y-2">
-          <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-300 pb-0.5">
-            KEY PROJECTS
-          </h2>
-          <div className="space-y-2">
-            
-            {/* 1. GPA Calculator */}
-            <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <div>
-                  <strong className="text-black font-bold">GPA Calculator - Academic Performance Tool</strong>{" "}
-                  <a href="https://gpa-calculator-nu-nine.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline text-[9px]">
-                    [Link]
-                  </a>
-                </div>
-                <span className="text-black text-[9px]">
-                  Next.js • TypeScript • Tailwind CSS • React
-                </span>
-              </div>
-              <p className="text-[9px] italic text-slate-800 mt-0.5">
-                Interactive web app designed for students to calculate course grades, simulate cumulative GPA scenarios, and visualize semester progression. Deployed live on Vercel
-              </p>
-              <ul className="list-disc pl-4 text-[9px] text-slate-900 mt-0.5 space-y-0.5">
-                <li>Real-time weighted credit calculation and dynamic target GPA forecasting.</li>
-                <li>Clean, distraction-free interface built with Next.js and Tailwind CSS.</li>
-                <li>Local state persistence for instant session saving and quick updates.</li>
-              </ul>
-            </div>
-
-            {/* 2. AI Resume Builder */}
-            <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <div>
-                  <strong className="text-black font-bold">AI Resume Builder - AI-Powered Career &amp; Resume Generator</strong>{" "}
-                  <a href="https://github.com/mihretu-dev" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline text-[9px]">
-                    [Link]
-                  </a>
-                </div>
-                <span className="text-black text-[9px]">
-                  React • Next.js • Tailwind CSS • Gemini API
-                </span>
-              </div>
-              <p className="text-[9px] italic text-slate-800 mt-0.5">
-                Intelligent web app that parses raw developer experience text, optimizes content using LLM APIs, formats tailored PDF resumes, and exports structured JSON portfolio schemas.
-              </p>
-              <ul className="list-disc pl-4 text-[9px] text-slate-900 mt-0.5 space-y-0.5">
-                <li>LLM-driven resume optimization and automated skill extraction from raw text.</li>
-                <li>Structured JSON schema export for seamless personal portfolio synchronization.</li>
-                <li>Real-time PDF document rendering with customizable minimalist themes.</li>
-              </ul>
-            </div>
-
-            {/* 3. Instagram Analyzer */}
-            <div>
-              <div className="flex justify-between items-baseline text-[10px]">
-                <div>
-                  <strong className="text-black font-bold">Instagram Analyzer - Client-Side Connection Analytics Tool</strong>{" "}
-                  <a href="https://insta-analyzer-rho.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline text-[9px]">
-                    [Link]
-                  </a>
-                </div>
-                <span className="text-black text-[9px]">
-                  React • JavaScript • Tailwind CSS
-                </span>
-              </div>
-              <p className="text-[9px] italic text-slate-800 mt-0.5">
-                Sleek, private, 100% client-side Instagram follower analyzer &amp; connection timeline tool. Track unfollowers, mutual connections, and follow history with zero login credentials required.
-              </p>
-              <ul className="list-disc pl-4 text-[9px] text-slate-900 mt-0.5 space-y-0.5">
-                <li>100% client-side data parsing — zero login credentials or server uploads required for complete privacy.</li>
-                <li>Comprehensive analytics for unfollowers, non-followers, mutual connections, and account fans.</li>
-                <li>Interactive follow timeline and engagement analytics built with React and Tailwind CSS.</li>
-              </ul>
-            </div>
-
           </div>
         </div>
 
         {/* Education */}
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           <h2 className="text-[11px] font-bold uppercase tracking-wider text-black border-b border-slate-300 pb-0.5">
             EDUCATION
           </h2>
           <div>
             <div className="flex justify-between items-baseline text-[10px]">
               <strong className="text-black font-bold">
-                Hawassa University — Bachelor of Science in Information System
+                Hawassa University — Bachelor of Science in Information Systems
               </strong>
               <span className="text-black font-semibold text-[9.5px]">
-                2023-03 — 2026-06 | Hawassa, Ethiopia
+                2023 – 2026 | Hawassa, Ethiopia
               </span>
             </div>
             <p className="text-[9.5px] text-slate-900 mt-0.5">
-              GPA: 3.19 / 4.00 With National Exit Exam Score of 85%
+              Graduated Class of 2026 • Cumulative GPA: 3.19 / 4.00 • National Exit Exam Score: 85%
             </p>
           </div>
         </div>

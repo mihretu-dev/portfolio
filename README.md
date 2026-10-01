@@ -44,6 +44,25 @@ This repository hosts the official source code for **Mihretu Hizkel's** personal
 
 ---
 
+## 💼 Work Experience
+
+| Organization / Company | Role | Period & Mode | Focus & Highlights |
+|:---|:---|:---|:---|
+| **AgriMocks** | Sales and Marketing Intern | `Sep 2026 – Present` • Remote | Digital marketing campaigns, agricultural demographic engagement, international market research, and user acquisition strategies. |
+| **FarmVizion** | Software Quality Assurance Tester | `Sep 2026 – Present` • Remote | Pre-production QA, beta testing, and stability analysis for the FarmVizion Android app & AIVA voice assistant across 176 countries; usability bug reporting. |
+| **Freelance / Self-Employed** | Full-Stack & Native Android Developer | `Jan 2025 – Present` • Hybrid | Offline-first Android apps with Kotlin, Jetpack Compose, Room DB; high-performance web platforms with Next.js, React, TypeScript, and Tailwind CSS. |
+| **South Ethiopia Finance Institute** | Network Administrator Intern | `Jul 2025 – Sep 2025` • On-site | ICT network infrastructure support, database administration routines, and system maintenance. |
+
+---
+
+## 📜 Certifications & Education
+
+- 🏆 **Agri-Tech Innovator: Beta Testing Specialist** — FarmVizion *(Issued Sep 2026)*
+- 🎓 **CS50x: Introduction to Computer Science** — Harvard University / CS50 *(Passed)*
+- 🎓 **B.S. in Information Systems** — Hawassa University *(Graduated Class of 2026 • GPA: 3.19 / 4.00 • Exit Exam: 85%)*
+
+---
+
 ## ⚡ Key Architecture & Highlights
 
 - **⚡ Next.js App Router & Turbopack**: Blazing-fast static generation, optimized hydration, and instant compilation.
